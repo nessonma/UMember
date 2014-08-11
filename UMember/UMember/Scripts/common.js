@@ -1,0 +1,3 @@
+﻿jQuery().ready(function ($) {
+
+})
