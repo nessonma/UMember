@@ -1,0 +1,208 @@
+﻿@if (System.Web.HttpContext.Current.Session["Admin_ID"] == null)
+{
+    Response.Redirect("~/Home/Logon");
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/smoothness/jquery-ui-1.10.4.custom.css")" rel="stylesheet" type="text/css" />
+   <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" /> 
+    <link href="@Url.Content("~/Content/PagedList.css")" rel="stylesheet" type="text/css" />    
+    <link href="@Url.Content("~/Content/bootstrap/css/bootstrap.css")" rel="stylesheet" type="text/css" />
+     
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.10.0.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap/js/bootstrap.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/common.js")" type="text/javascript"></script>
+</head>
+<body>
+     <div class="container-fluid" style="height:35px;background-color:#0088cc;">
+    <div class="row-fluid" >
+       <div><h5>后台管理系统</h5></div>
+    </div>
+        </div>
+    
+    <div class="container-fluid">
+  <div class="row-fluid">
+            <div class="span2 bs-docs-sidebar">
+                <ul class="nav nav-list bs-docs-sidenav" style="border:1px solid #0088cc;">
+
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("新增会员") || System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员审核") || System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员信息") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1" 
+                         || System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员加盟升级") ||System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员升级经理") ||System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("推荐关系图") ||
+                         System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("安置关系图") ||System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("服务中心管理") 
+                         )
+                    {
+                    <li class="nav-header">会员管理</li>
+                     }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("新增会员") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString()=="1")
+                    {
+                    <li class=""><a href="~/MemberInfo/Create">新增会员</a></li>
+                    }
+                    
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员信息") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li class=""><a href="~/MemberInfo/Index">会员信息</a></li>
+                    }
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("推荐额度") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li class=""><a href="~/MemberInfo/RecommendAmountIndex">推荐额度</a></li>
+                    }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员加盟升级") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/MemberInfo/UpGradeIndex">会员加盟升级</a></li>
+                    }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员升级经理") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/MemberInfo/UpMarketingManagerLevelIndex">会员升级经理</a></li>   
+                    }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("推荐关系图") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {                                     
+                    <li><a href="~/MemberRecommenderTree/Index/1">推荐关系图</a></li>
+                    }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("安置关系图") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/MemberParentTree/Index/1">安置关系图</a></li>
+                    }
+                   
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("奖金参数设置") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1" || System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("提现参数") ||
+                         System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("加盟等级管理") || System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("产品管理") || System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("营销经理级别管理")
+                         )
+                    {
+                     <li class="nav-header">基础数据</li>
+                     }
+
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("奖金参数设置") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/BonusCategory/Index">奖金参数设置</a></li>
+                     }
+                    
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("加盟等级管理") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/AllyGrade/Index">加盟等级管理</a></li>
+                     }
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("产品管理") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/Product/Index">产品管理</a></li>
+                     }
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("营销经理级别管理") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/MarketingManagerLevel/Index">营销经理级别管理</a></li>
+                     }
+
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员充值") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1" || System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("提现审核")||System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("转账记录") ||
+                         System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("结算记录") ||System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("日奖结算") ||
+                        System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("周奖结算") ||System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("复消结算") ||System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("股东分红结算")
+                         )
+                    {
+                    <li class="nav-header">财务管理</li>
+                     }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员财务管理") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/MemberAccount/Index">会员财务管理</a></li>
+                     }
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员充值") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/MemberRechargeRecord/Index">会员充值</a></li>
+                     }
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("提现审核") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/MemberWithdrawRecord/Index">提现审核</a></li>
+                     }
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("转账记录") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/MemberTransferRecord/Index">转账记录</a></li>
+                     }
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员充值") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {                    
+                         <li><a href="~/MemberRechargeRecord_CashMoney/Index">现金充值</a></li>    
+                     }
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("结算记录") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {             
+                    <li><a href="~/Jiangjin/BonusDetail">结算记录</a></li>
+                     }
+                     
+                    
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("奖金发放") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/MemberInfo/JiangJinFaFang">奖金发放</a></li>
+                     }
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("股东分红") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/JiangJin/GuDongFenHong">股东分红</a></li>
+                     }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("消费审核") || System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("兑换审核") || System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("加盟产品发货") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {                    
+                    <li class="nav-header">物流管理</li> 
+                     }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("消费审核") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    
+                    <li><a href="~/ExchangeRecord/Index">兑换审核</a></li>
+                    }
+                    
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("加盟产品发货") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    
+                    <li><a href="~/MemberAllyGradeProductRecord/SendAllyGradeProduct">加盟产品发货</a></li>
+                    }
+
+
+                     @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("操作日志") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1"||System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("新闻管理") ||System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员留言") ||
+                         System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("管理员管理") ||System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("管理员角色")
+                         )
+                    { 
+                    <li class="nav-header">办公管理</li>  
+                     }
+                    
+                    
+                               
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("操作日志") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {                          
+                    <li><a href="~/Log/Index">操作日志</a></li>
+                    }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("新闻管理") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/News/Index">新闻管理</a></li>
+                    }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("会员留言") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/Message/Index">会员留言</a></li>
+<li><a href="~/Message/LeadIndex">管理员留言</a></li>
+                    }
+                     
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("管理员管理") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/Admin/Index">管理员管理</a></li>
+                    }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("管理员角色") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                     <li><a href="~/Role/Index">管理员角色</a></li>
+                    }
+                    
+                    <li class="nav-header">系统管理</li>
+                    
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("系统关闭") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/DataBaseState/Index">系统关闭</a></li>
+                    }
+                    @if (System.Web.HttpContext.Current.Session["Menu_Name"].ToString().Contains("数据备份") || System.Web.HttpContext.Current.Session["Admin_ID"].ToString() == "1")
+                    {
+                    <li><a href="~/DataBaseState/BackUp">数据备份</a></li>
+<li><a href="~/Admin/ChangePassword">修改密码</a></li>
+                    }
+                    
+                    <li><a href="~/Home/Quit">安全退出</a></li>
+                </ul>
+            </div>
+            <div class="span10">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="row-fluid">
+        <div class="span12"></div>
+    </div>
+</body>
+</html>
