@@ -7,5 +7,6 @@ namespace UMember.UMemberBLL
 {
     public class OperateProc
     {
+
     }
 }

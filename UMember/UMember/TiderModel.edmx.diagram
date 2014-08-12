@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="48a6a739576d42b39e5efab6baa85b61" Name="关系图1" ZoomLevel="54">
+        <EntityTypeShape EntityType="dbTiderModel.tbAdmin" Width="1.5" PointX="10" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbAllyGrade" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbBonusConfig" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbBonusRecord" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbCart" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbCity" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbDataBaseState" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbJmail" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbMemberAccount" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbMemberAccountChangeRecord" Width="1.5" PointX="5.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbMemberBonusTotal" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbMemberInfo" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbMemberUpgradeRecord" Width="1.5" PointX="5.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbMessage" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbNews" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbProduct" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbProvince" Width="1.5" PointX="11.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbRole" Width="1.5" PointX="7.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbRoleMenu" Width="1.5" PointX="10" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbSCenterAccount" Width="1.5" PointX="3" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbSCenterAccountChangeRecord" Width="1.5" PointX="3" PointY="39.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbSCenterInfo" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbShoppingRecord" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbTiderModel.tbWithdrawRules" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="dbTiderModel.FK_tbAdmin_tbRole" ManuallyRouted="false" />
+        <AssociationConnector Association="dbTiderModel.FK_tbMemberInfo_tbAllyGrade" ManuallyRouted="false" />
+        <AssociationConnector Association="dbTiderModel.FK_tbBonusRecord_tbMemberInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbTiderModel.FK_tbMemberAccount_tbMemberInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbTiderModel.FK_tbMemberAccountChangeRecord_tbMemberInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbTiderModel.FK_tbMemberBonusTotal_tbMemberInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbTiderModel.FK_tbMemberInfo_tbSCenterInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbTiderModel.FK_tbMemberUpgradeRecord_tbMemberInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbTiderModel.FK_tbRoleMenu_tbRole" ManuallyRouted="false" />
+        <AssociationConnector Association="dbTiderModel.FK_tbSCenterAccount_tbSCenterInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbTiderModel.FK_tbSCenterAccountChangeRecord_tbSCenterInfo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

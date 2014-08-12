@@ -1,0 +1,405 @@
+﻿@model IEnumerable<UMember.tbMemberInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tbMemberAccount.Member_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_IDs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_IDs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_Depth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Depth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Depth_FilledAll)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_ChildNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Left_Seven)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Right_Seven)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_Sum_ThreeLayer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_ChildNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A_Sum_History)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A_Sum_Add)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A_Sum_Nocash)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A_Member_Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Sum_History)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Sum_Add)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Sum_Nocash)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B_Member_Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Sum_History)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Sum_Add)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Member_Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_Sum_FuxXiao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_Current_FuXiao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BenRen_Sum_FuXiao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BenRen_Current_FuXiao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BenRen_BenYue_FuXiao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_Sum_Retail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.P_Current_Retail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BenRen_Sum_Retail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BenRen_Current_Retail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member_Alias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member_RealName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Second_Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bank_Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Open_Bank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DetailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manager_Level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbAllyGrade.AllyGrade_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Register_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.registrant_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.registrant_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Empty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Cancelled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Delete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Money)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First_PV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Real_Money)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Real_PV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sum_Money)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sum_PV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance_Num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbSCenterInfo.SCenter_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Send)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Balanced)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbMemberAccount.Member_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_IDs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_IDs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Depth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Depth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Depth_FilledAll)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_ChildNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Left_Seven)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Right_Seven)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Sum_ThreeLayer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_ChildNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_Sum_History)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_Sum_Add)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_Sum_Nocash)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_Member_Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Sum_History)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Sum_Add)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Sum_Nocash)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B_Member_Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Sum_History)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Sum_Add)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Member_Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Sum_FuxXiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Current_FuXiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BenRen_Sum_FuXiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BenRen_Current_FuXiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BenRen_BenYue_FuXiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Sum_Retail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Current_Retail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BenRen_Sum_Retail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BenRen_Current_Retail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member_Alias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member_RealName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Second_Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Open_Bank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DetailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Manager_Level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbAllyGrade.AllyGrade_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Register_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.registrant_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.registrant_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Empty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Cancelled)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Delete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Money)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_PV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Real_Money)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Real_PV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sum_Money)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sum_PV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance_Num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbSCenterInfo.SCenter_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Send)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Balanced)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

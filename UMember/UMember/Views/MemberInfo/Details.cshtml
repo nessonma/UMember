@@ -1,0 +1,456 @@
+﻿@model UMember.tbMemberInfo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbMemberInfo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbMemberAccount.Member_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbMemberAccount.Member_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.P_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.P_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.R_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.R_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Qu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Qu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.P_IDs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.P_IDs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.R_IDs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.R_IDs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.P_Depth)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.P_Depth)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.R_Depth)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.R_Depth)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Depth_FilledAll)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Depth_FilledAll)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.P_ChildNum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.P_ChildNum)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Left_Seven)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Left_Seven)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Right_Seven)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Right_Seven)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.P_Sum_ThreeLayer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.P_Sum_ThreeLayer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.R_ChildNum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.R_ChildNum)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.A_Sum_History)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.A_Sum_History)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.A_Sum_Add)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.A_Sum_Add)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.A_Sum_Nocash)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.A_Sum_Nocash)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.A_Member_Count)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.A_Member_Count)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.B_Sum_History)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.B_Sum_History)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.B_Sum_Add)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.B_Sum_Add)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.B_Sum_Nocash)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.B_Sum_Nocash)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.B_Member_Count)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.B_Member_Count)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.R_Sum_History)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.R_Sum_History)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.R_Sum_Add)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.R_Sum_Add)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.R_Member_Count)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.R_Member_Count)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.P_Sum_FuxXiao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.P_Sum_FuxXiao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.P_Current_FuXiao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.P_Current_FuXiao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BenRen_Sum_FuXiao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BenRen_Sum_FuXiao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BenRen_Current_FuXiao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BenRen_Current_FuXiao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BenRen_BenYue_FuXiao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BenRen_BenYue_FuXiao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.P_Sum_Retail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.P_Sum_Retail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.P_Current_Retail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.P_Current_Retail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BenRen_Sum_Retail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BenRen_Sum_Retail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BenRen_Current_Retail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BenRen_Current_Retail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Member_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Member_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Member_Alias)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Member_Alias)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Member_RealName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Member_RealName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.First_Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.First_Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Second_Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Second_Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sex)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bank_Account)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bank_Account)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Open_Bank)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Open_Bank)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DetailAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DetailAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Manager_Level)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Manager_Level)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbAllyGrade.AllyGrade_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbAllyGrade.AllyGrade_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Register_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Register_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.registrant_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.registrant_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.registrant_Type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.registrant_Type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Empty)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Empty)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Cancelled)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Cancelled)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Delete)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Delete)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.First_Money)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.First_Money)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.First_PV)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.First_PV)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Real_Money)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Real_Money)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Real_PV)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Real_PV)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sum_Money)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sum_Money)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sum_PV)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sum_PV)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Balance_Num)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Balance_Num)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbSCenterInfo.SCenter_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbSCenterInfo.SCenter_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Send)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Send)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Balanced)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Balanced)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

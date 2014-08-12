@@ -1,0 +1,1734 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbTiderModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="dbTiderModelStoreContainer">
+          <EntitySet Name="tbAdmin" EntityType="dbTiderModel.Store.tbAdmin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbAllyGrade" EntityType="dbTiderModel.Store.tbAllyGrade" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbBonusConfig" EntityType="dbTiderModel.Store.tbBonusConfig" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbBonusRecord" EntityType="dbTiderModel.Store.tbBonusRecord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbCart" EntityType="dbTiderModel.Store.tbCart" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbCity" EntityType="dbTiderModel.Store.tbCity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbDataBaseState" EntityType="dbTiderModel.Store.tbDataBaseState" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbJmail" EntityType="dbTiderModel.Store.tbJmail" store:Type="Tables" store:Schema="dbo" store:Name="tbJmail">
+            <DefiningQuery>SELECT 
+      [tbJmail].[Mail_ID] AS [Mail_ID], 
+      [tbJmail].[Mail_Content] AS [Mail_Content], 
+      [tbJmail].[Receiver_MailAddress] AS [Receiver_MailAddress], 
+      [tbJmail].[Send_Time] AS [Send_Time], 
+      [tbJmail].[Mail_Type] AS [Mail_Type], 
+      [tbJmail].[Description] AS [Description], 
+      [tbJmail].[Is_Failed] AS [Is_Failed]
+      FROM [dbo].[tbJmail] AS [tbJmail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbMemberAccount" EntityType="dbTiderModel.Store.tbMemberAccount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbMemberAccountChangeRecord" EntityType="dbTiderModel.Store.tbMemberAccountChangeRecord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbMemberBonusTotal" EntityType="dbTiderModel.Store.tbMemberBonusTotal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbMemberInfo" EntityType="dbTiderModel.Store.tbMemberInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbMemberUpgradeRecord" EntityType="dbTiderModel.Store.tbMemberUpgradeRecord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbMessage" EntityType="dbTiderModel.Store.tbMessage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbNews" EntityType="dbTiderModel.Store.tbNews" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbProduct" EntityType="dbTiderModel.Store.tbProduct" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbProvince" EntityType="dbTiderModel.Store.tbProvince" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbRole" EntityType="dbTiderModel.Store.tbRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbRoleMenu" EntityType="dbTiderModel.Store.tbRoleMenu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbSCenterAccount" EntityType="dbTiderModel.Store.tbSCenterAccount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbSCenterAccountChangeRecord" EntityType="dbTiderModel.Store.tbSCenterAccountChangeRecord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbSCenterInfo" EntityType="dbTiderModel.Store.tbSCenterInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbShoppingRecord" EntityType="dbTiderModel.Store.tbShoppingRecord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbWithdrawRules" EntityType="dbTiderModel.Store.tbWithdrawRules" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_tbAdmin_tbRole" Association="dbTiderModel.Store.FK_tbAdmin_tbRole">
+            <End Role="tbRole" EntitySet="tbRole" />
+            <End Role="tbAdmin" EntitySet="tbAdmin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbBonusRecord_tbMemberInfo" Association="dbTiderModel.Store.FK_tbBonusRecord_tbMemberInfo">
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+            <End Role="tbBonusRecord" EntitySet="tbBonusRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberAccount_tbMemberInfo" Association="dbTiderModel.Store.FK_tbMemberAccount_tbMemberInfo">
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+            <End Role="tbMemberAccount" EntitySet="tbMemberAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberAccountChangeRecord_tbMemberInfo" Association="dbTiderModel.Store.FK_tbMemberAccountChangeRecord_tbMemberInfo">
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+            <End Role="tbMemberAccountChangeRecord" EntitySet="tbMemberAccountChangeRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberBonusTotal_tbMemberInfo" Association="dbTiderModel.Store.FK_tbMemberBonusTotal_tbMemberInfo">
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+            <End Role="tbMemberBonusTotal" EntitySet="tbMemberBonusTotal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberInfo_tbAllyGrade" Association="dbTiderModel.Store.FK_tbMemberInfo_tbAllyGrade">
+            <End Role="tbAllyGrade" EntitySet="tbAllyGrade" />
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberInfo_tbSCenterInfo" Association="dbTiderModel.Store.FK_tbMemberInfo_tbSCenterInfo">
+            <End Role="tbSCenterInfo" EntitySet="tbSCenterInfo" />
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberUpgradeRecord_tbMemberInfo" Association="dbTiderModel.Store.FK_tbMemberUpgradeRecord_tbMemberInfo">
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+            <End Role="tbMemberUpgradeRecord" EntitySet="tbMemberUpgradeRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRoleMenu_tbRole" Association="dbTiderModel.Store.FK_tbRoleMenu_tbRole">
+            <End Role="tbRole" EntitySet="tbRole" />
+            <End Role="tbRoleMenu" EntitySet="tbRoleMenu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbSCenterAccount_tbSCenterInfo" Association="dbTiderModel.Store.FK_tbSCenterAccount_tbSCenterInfo">
+            <End Role="tbSCenterInfo" EntitySet="tbSCenterInfo" />
+            <End Role="tbSCenterAccount" EntitySet="tbSCenterAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbSCenterAccountChangeRecord_tbSCenterInfo" Association="dbTiderModel.Store.FK_tbSCenterAccountChangeRecord_tbSCenterInfo">
+            <End Role="tbSCenterInfo" EntitySet="tbSCenterInfo" />
+            <End Role="tbSCenterAccountChangeRecord" EntitySet="tbSCenterAccountChangeRecord" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbAdmin">
+          <Key>
+            <PropertyRef Name="Admin_ID" />
+          </Key>
+          <Property Name="Admin_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Role_ID" Type="int" Nullable="false" />
+          <Property Name="Admin_Alias" Type="nvarchar" Nullable="false" MaxLength="49" />
+          <Property Name="Admin_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Admin_Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Is_Delete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbAllyGrade">
+          <Key>
+            <PropertyRef Name="AllyGrade_ID" />
+          </Key>
+          <Property Name="AllyGrade_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AllyGrade_Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Money" Type="float" Nullable="false" />
+          <Property Name="PV" Type="float" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Gift_Money" Type="float" Nullable="false" />
+          <Property Name="Gift_PV" Type="float" Nullable="false" />
+          <Property Name="Is_Delete" Type="bit" Nullable="false" />
+          <Property Name="Is_Hide" Type="bit" Nullable="false" />
+          <Property Name="MaxZhaoSangJiang" Type="float" Nullable="false" />
+          <Property Name="MaxShiCangBuTieFactor" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbBonusConfig">
+          <Key>
+            <PropertyRef Name="Category_ID" />
+          </Key>
+          <Property Name="Category_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Balance_Num" Type="int" Nullable="false" />
+          <Property Name="JSNum" Type="int" Nullable="false" />
+          <Property Name="Create_Time" Type="datetime" Nullable="false" />
+          <Property Name="TuiJian_Para1" Type="float" Nullable="false" />
+          <Property Name="CenJiang_Para1" Type="float" Nullable="false" />
+          <Property Name="CenJiang_Para2" Type="float" Nullable="false" />
+          <Property Name="CenJiang_Para3" Type="float" Nullable="false" />
+          <Property Name="JianDian_Para1" Type="float" Nullable="false" />
+          <Property Name="JianDian_Para2" Type="int" Nullable="false" />
+          <Property Name="ZiJianGuanLi_Para1" Type="float" Nullable="false" />
+          <Property Name="ZiJianGuanLi_Para2" Type="float" Nullable="false" />
+          <Property Name="ZiJianGuanLi_Para3" Type="float" Nullable="false" />
+          <Property Name="ZiJianGuanLi_Para4" Type="float" Nullable="false" />
+          <Property Name="ZiJianGuanLi_Para5" Type="float" Nullable="false" />
+          <Property Name="DianBu_Para1" Type="float" Nullable="false" />
+          <Property Name="FengHong_Para1" Type="float" Nullable="false" />
+          <Property Name="FengHong_Para2" Type="float" Nullable="false" />
+          <Property Name="CeJiang_Para1" Type="float" Nullable="false" />
+          <Property Name="CeJiang_Para2" Type="float" Nullable="false" />
+          <Property Name="FangJiang_Para1" Type="float" Nullable="false" />
+          <Property Name="FangJiang_Para2" Type="float" Nullable="false" />
+          <Property Name="LYou_Para1" Type="float" Nullable="false" />
+          <Property Name="LYou_Para2" Type="float" Nullable="false" />
+          <Property Name="FuXiao_Para1" Type="float" Nullable="false" />
+          <Property Name="FuXiao_Para2" Type="float" Nullable="false" />
+          <Property Name="FuXiao_Para3" Type="float" Nullable="false" />
+          <Property Name="FuXiao_Para4" Type="float" Nullable="false" />
+          <Property Name="XianDai_Para1" Type="float" Nullable="false" />
+          <Property Name="SiDai_Para1" Type="float" Nullable="false" />
+          <Property Name="SenDai_Para1" Type="float" Nullable="false" />
+          <Property Name="Tax_Para1" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbBonusRecord">
+          <Key>
+            <PropertyRef Name="Record_ID" />
+          </Key>
+          <Property Name="Record_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Member_ID" Type="int" Nullable="false" />
+          <Property Name="Current_Bonus" Type="float" Nullable="false" />
+          <Property Name="Bonus_Description" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Bonus_Producer" Type="int" Nullable="false" />
+          <Property Name="Balance_Num" Type="int" Nullable="false" />
+          <Property Name="Operator_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCart">
+          <Key>
+            <PropertyRef Name="Cart_ID" />
+          </Key>
+          <Property Name="Cart_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_ID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Customer_Type" Type="int" Nullable="false" />
+          <Property Name="Buy_Count" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCity">
+          <Key>
+            <PropertyRef Name="City_ID" />
+          </Key>
+          <Property Name="City_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Province_ID" Type="int" Nullable="false" />
+          <Property Name="City_Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbDataBaseState">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Is_Closed" Type="bit" Nullable="false" />
+          <Property Name="Reason" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Operator_ID" Type="int" Nullable="false" />
+          <Property Name="Operator_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“dbTider.dbo.tbJmail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="tbJmail">
+          <Key>
+            <PropertyRef Name="Mail_ID" />
+            <PropertyRef Name="Mail_Content" />
+            <PropertyRef Name="Receiver_MailAddress" />
+            <PropertyRef Name="Send_Time" />
+            <PropertyRef Name="Mail_Type" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="Is_Failed" />
+          </Key>
+          <Property Name="Mail_ID" Type="int" Nullable="false" />
+          <Property Name="Mail_Content" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Receiver_MailAddress" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Send_Time" Type="datetime" Nullable="false" />
+          <Property Name="Mail_Type" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Is_Failed" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbMemberAccount">
+          <Key>
+            <PropertyRef Name="Member_ID" />
+          </Key>
+          <Property Name="Member_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Sum_Bonus" Type="float" Nullable="false" />
+          <Property Name="Sum_ECurrency" Type="float" Nullable="false" />
+          <Property Name="Sum_FuXiao" Type="float" Nullable="false" />
+          <Property Name="Left_Bonus" Type="float" Nullable="false" />
+          <Property Name="Left_ECurrency" Type="float" Nullable="false" />
+          <Property Name="Left_FuXiao" Type="float" Nullable="false" />
+          <Property Name="Update_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbMemberAccountChangeRecord">
+          <Key>
+            <PropertyRef Name="Record_ID" />
+          </Key>
+          <Property Name="Record_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Member_ID" Type="int" Nullable="false" />
+          <Property Name="Money" Type="float" Nullable="false" />
+          <Property Name="Account_type" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="800" />
+          <Property Name="Operator_ID" Type="int" Nullable="false" />
+          <Property Name="Operator_Type" Type="int" Nullable="false" />
+          <Property Name="Operator_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbMemberBonusTotal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Member_ID" Type="int" Nullable="false" />
+          <Property Name="Balance_Num" Type="int" Nullable="false" />
+          <Property Name="Sum_TuiJian" Type="float" Nullable="false" />
+          <Property Name="Current_TuiJian" Type="float" Nullable="false" />
+          <Property Name="Sum_CenJiang" Type="float" Nullable="false" />
+          <Property Name="Current_CenJiang" Type="float" Nullable="false" />
+          <Property Name="Sum_JianDian" Type="float" Nullable="false" />
+          <Property Name="Current_JianDian" Type="float" Nullable="false" />
+          <Property Name="Sum_ZiJianGuanLi" Type="float" Nullable="false" />
+          <Property Name="Current_ZiJianGuanLi" Type="float" Nullable="false" />
+          <Property Name="Sum_DianBu" Type="float" Nullable="false" />
+          <Property Name="Current_DianBu" Type="float" Nullable="false" />
+          <Property Name="Sum_FenHong" Type="float" Nullable="false" />
+          <Property Name="Current_FenHong" Type="float" Nullable="false" />
+          <Property Name="Sum_CeJiang" Type="float" Nullable="false" />
+          <Property Name="Current_CeJiang" Type="float" Nullable="false" />
+          <Property Name="Sum_FangJiang" Type="float" Nullable="false" />
+          <Property Name="Current_FangJiang" Type="float" Nullable="false" />
+          <Property Name="Sum_Lyou" Type="float" Nullable="false" />
+          <Property Name="Current_Lyou" Type="float" Nullable="false" />
+          <Property Name="Sum_DaiLiJiang" Type="float" Nullable="false" />
+          <Property Name="Current_DaiLiJiang" Type="float" Nullable="false" />
+          <Property Name="Sum_LinSou" Type="float" Nullable="false" />
+          <Property Name="Current_LinSou" Type="float" Nullable="false" />
+          <Property Name="Sum_FuXiao" Type="float" Nullable="false" />
+          <Property Name="Current_FuXiao" Type="float" Nullable="false" />
+          <Property Name="Sum_Tax" Type="float" Nullable="false" />
+          <Property Name="Current_Tax" Type="float" Nullable="false" />
+          <Property Name="Sum_Total" Type="float" Nullable="false" />
+          <Property Name="Current_Total" Type="float" Nullable="false" />
+          <Property Name="Update_Time" Type="datetime" Nullable="false" />
+          <Property Name="Is_Released" Type="bit" Nullable="false" />
+          <Property Name="Released_Time" Type="datetime" Nullable="false" />
+          <Property Name="Is_Cancelled" Type="bit" Nullable="false" />
+          <Property Name="Cancelled_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbMemberInfo">
+          <Key>
+            <PropertyRef Name="Member_ID" />
+          </Key>
+          <Property Name="Member_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="P_ID" Type="int" Nullable="false" />
+          <Property Name="R_ID" Type="int" Nullable="false" />
+          <Property Name="Qu" Type="int" Nullable="false" />
+          <Property Name="P_IDs" Type="int" Nullable="false" />
+          <Property Name="R_IDs" Type="int" Nullable="false" />
+          <Property Name="P_Depth" Type="int" Nullable="false" />
+          <Property Name="R_Depth" Type="int" Nullable="false" />
+          <Property Name="Depth_FilledAll" Type="int" Nullable="false" />
+          <Property Name="P_ChildNum" Type="int" Nullable="false" />
+          <Property Name="Left_Seven" Type="int" Nullable="false" />
+          <Property Name="Right_Seven" Type="int" Nullable="false" />
+          <Property Name="P_Sum_ThreeLayer" Type="int" Nullable="false" />
+          <Property Name="R_ChildNum" Type="int" Nullable="false" />
+          <Property Name="A_Sum_History" Type="float" Nullable="false" />
+          <Property Name="A_Sum_Add" Type="float" Nullable="false" />
+          <Property Name="A_Sum_Nocash" Type="float" Nullable="false" />
+          <Property Name="A_Member_Count" Type="int" Nullable="false" />
+          <Property Name="B_Sum_History" Type="float" Nullable="false" />
+          <Property Name="B_Sum_Add" Type="float" Nullable="false" />
+          <Property Name="B_Sum_Nocash" Type="float" Nullable="false" />
+          <Property Name="B_Member_Count" Type="int" Nullable="false" />
+          <Property Name="R_Sum_History" Type="float" Nullable="false" />
+          <Property Name="R_Sum_Add" Type="float" Nullable="false" />
+          <Property Name="R_Member_Count" Type="int" Nullable="false" />
+          <Property Name="P_Sum_FuxXiao" Type="float" Nullable="false" />
+          <Property Name="P_Current_FuXiao" Type="float" Nullable="false" />
+          <Property Name="BenRen_Sum_FuXiao" Type="float" Nullable="false" />
+          <Property Name="BenRen_Current_FuXiao" Type="float" Nullable="false" />
+          <Property Name="BenRen_BenYue_FuXiao" Type="float" Nullable="false" />
+          <Property Name="P_Sum_Retail" Type="float" Nullable="false" />
+          <Property Name="P_Current_Retail" Type="float" Nullable="false" />
+          <Property Name="BenRen_Sum_Retail" Type="float" Nullable="false" />
+          <Property Name="BenRen_Current_Retail" Type="float" Nullable="false" />
+          <Property Name="Member_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Member_Alias" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Member_RealName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="First_Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Second_Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sex" Type="bit" Nullable="false" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Bank_Account" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Open_Bank" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address_ID" Type="int" Nullable="false" />
+          <Property Name="DetailAddress" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Manager_Level" Type="int" Nullable="false" />
+          <Property Name="AllyGrade_ID" Type="int" Nullable="false" />
+          <Property Name="Register_Time" Type="datetime" Nullable="false" />
+          <Property Name="registrant_ID" Type="int" Nullable="false" />
+          <Property Name="registrant_Type" Type="int" Nullable="false" />
+          <Property Name="Is_Empty" Type="bit" Nullable="false" />
+          <Property Name="Is_Cancelled" Type="bit" Nullable="false" />
+          <Property Name="Is_Delete" Type="bit" Nullable="false" />
+          <Property Name="First_Money" Type="float" Nullable="false" />
+          <Property Name="First_PV" Type="float" Nullable="false" />
+          <Property Name="Real_Money" Type="float" Nullable="false" />
+          <Property Name="Real_PV" Type="float" Nullable="false" />
+          <Property Name="Sum_Money" Type="float" Nullable="false" />
+          <Property Name="Sum_PV" Type="float" Nullable="false" />
+          <Property Name="Balance_Num" Type="int" Nullable="false" />
+          <Property Name="SCenter_ID" Type="int" Nullable="false" />
+          <Property Name="Is_Send" Type="bit" Nullable="false" />
+          <Property Name="Is_Balanced" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbMemberUpgradeRecord">
+          <Key>
+            <PropertyRef Name="Record_ID" />
+          </Key>
+          <Property Name="Record_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Member_ID" Type="int" Nullable="false" />
+          <Property Name="OldAllyGrade_ID" Type="int" Nullable="false" />
+          <Property Name="NewAllyGrade_ID" Type="int" Nullable="false" />
+          <Property Name="Money" Type="float" Nullable="false" />
+          <Property Name="PV" Type="float" Nullable="false" />
+          <Property Name="Operator_ID" Type="int" Nullable="false" />
+          <Property Name="Operate_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbMessage">
+          <Key>
+            <PropertyRef Name="Message_ID" />
+          </Key>
+          <Property Name="Message_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Sender_ID" Type="int" Nullable="false" />
+          <Property Name="Sender_Type" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Send_Time" Type="datetime" Nullable="false" />
+          <Property Name="Receiver_ID" Type="int" Nullable="false" />
+          <Property Name="Receiver_Type" Type="int" Nullable="false" />
+          <Property Name="Message_Send" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Message_Reply" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Reply_Time" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbNews">
+          <Key>
+            <PropertyRef Name="News_ID" />
+          </Key>
+          <Property Name="News_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Category" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="Editor" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Release_Time" Type="datetime" Nullable="false" />
+          <Property Name="Releaser_ID" Type="int" Nullable="false" />
+          <Property Name="Receiver_Type" Type="int" Nullable="false" />
+          <Property Name="Is_Delete" Type="bit" Nullable="false" />
+          <Property Name="Delete_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbProduct">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+          </Key>
+          <Property Name="Product_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Product_Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Product_Alias" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="800" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="PV" Type="float" Nullable="false" />
+          <Property Name="Product_Code" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Product_Tag" Type="int" Nullable="false" />
+          <Property Name="Stocked_Num" Type="int" Nullable="false" />
+          <Property Name="SalesVolume" Type="int" Nullable="false" />
+          <Property Name="SendedVolume" Type="int" Nullable="false" />
+          <Property Name="Is_Delete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbProvince">
+          <Key>
+            <PropertyRef Name="Province_ID" />
+          </Key>
+          <Property Name="Province_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Province_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbRole">
+          <Key>
+            <PropertyRef Name="Role_ID" />
+          </Key>
+          <Property Name="Role_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Role_Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Is_Delete" Type="bit" Nullable="false" />
+          <Property Name="Is_Hide" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbRoleMenu">
+          <Key>
+            <PropertyRef Name="RoleMenu_ID" />
+          </Key>
+          <Property Name="RoleMenu_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Role_ID" Type="int" Nullable="false" />
+          <Property Name="Menu_Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbSCenterAccount">
+          <Key>
+            <PropertyRef Name="SCenter_ID" />
+          </Key>
+          <Property Name="SCenter_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Sum_ECurrency" Type="float" Nullable="false" />
+          <Property Name="Sum_Cash" Type="float" Nullable="false" />
+          <Property Name="Left_ECurrency" Type="float" Nullable="false" />
+          <Property Name="Left_Cash" Type="float" Nullable="false" />
+          <Property Name="Update_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbSCenterAccountChangeRecord">
+          <Key>
+            <PropertyRef Name="Record_ID" />
+          </Key>
+          <Property Name="Record_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SCenter_ID" Type="int" Nullable="false" />
+          <Property Name="Money" Type="float" Nullable="false" />
+          <Property Name="Account_type" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="800" />
+          <Property Name="Operator_ID" Type="int" Nullable="false" />
+          <Property Name="Operator_Type" Type="int" Nullable="false" />
+          <Property Name="Operator_Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbSCenterInfo">
+          <Key>
+            <PropertyRef Name="SCenter_ID" />
+          </Key>
+          <Property Name="SCenter_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SCenter_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ServinceCenter_RealName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="First_Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Second_Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Scenter_Level" Type="int" Nullable="false" />
+          <Property Name="Address_ID" Type="int" Nullable="false" />
+          <Property Name="DetailAddress" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Is_Delete" Type="bit" Nullable="false" />
+          <Property Name="SCenterManager_ID" Type="int" Nullable="false" />
+          <Property Name="SCenterManager_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SCenterManager_Phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbShoppingRecord">
+          <Key>
+            <PropertyRef Name="Record_ID" />
+          </Key>
+          <Property Name="Record_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Order_ID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Product_ID" Type="int" Nullable="false" />
+          <Property Name="Customer_ID" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Customer_Type" Type="int" Nullable="false" />
+          <Property Name="Buy_Time" Type="datetime" Nullable="false" />
+          <Property Name="Product_Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Buy_Count" Type="int" Nullable="false" />
+          <Property Name="Sum_Price" Type="float" Nullable="false" />
+          <Property Name="Sum_PV" Type="float" Nullable="false" />
+          <Property Name="Receiver_Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Receiver_Address" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Receiver_Phone" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Send_Time" Type="datetime" Nullable="false" />
+          <Property Name="Operator_ID" Type="int" Nullable="false" />
+          <Property Name="Express_Info" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbWithdrawRules">
+          <Key>
+            <PropertyRef Name="Limit_ID" />
+          </Key>
+          <Property Name="Limit_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lower_Money" Type="float" Nullable="false" />
+          <Property Name="uper_Money" Type="float" Nullable="false" />
+          <Property Name="HandlingFee" Type="float" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tbAdmin_tbRole">
+          <End Role="tbRole" Type="dbTiderModel.Store.tbRole" Multiplicity="1" />
+          <End Role="tbAdmin" Type="dbTiderModel.Store.tbAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbRole">
+              <PropertyRef Name="Role_ID" />
+            </Principal>
+            <Dependent Role="tbAdmin">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbBonusRecord_tbMemberInfo">
+          <End Role="tbMemberInfo" Type="dbTiderModel.Store.tbMemberInfo" Multiplicity="1" />
+          <End Role="tbBonusRecord" Type="dbTiderModel.Store.tbBonusRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMemberInfo">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="tbBonusRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberAccount_tbMemberInfo">
+          <End Role="tbMemberInfo" Type="dbTiderModel.Store.tbMemberInfo" Multiplicity="1" />
+          <End Role="tbMemberAccount" Type="dbTiderModel.Store.tbMemberAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbMemberInfo">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="tbMemberAccount">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberAccountChangeRecord_tbMemberInfo">
+          <End Role="tbMemberInfo" Type="dbTiderModel.Store.tbMemberInfo" Multiplicity="1" />
+          <End Role="tbMemberAccountChangeRecord" Type="dbTiderModel.Store.tbMemberAccountChangeRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMemberInfo">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="tbMemberAccountChangeRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberBonusTotal_tbMemberInfo">
+          <End Role="tbMemberInfo" Type="dbTiderModel.Store.tbMemberInfo" Multiplicity="1" />
+          <End Role="tbMemberBonusTotal" Type="dbTiderModel.Store.tbMemberBonusTotal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMemberInfo">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="tbMemberBonusTotal">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberInfo_tbAllyGrade">
+          <End Role="tbAllyGrade" Type="dbTiderModel.Store.tbAllyGrade" Multiplicity="1" />
+          <End Role="tbMemberInfo" Type="dbTiderModel.Store.tbMemberInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbAllyGrade">
+              <PropertyRef Name="AllyGrade_ID" />
+            </Principal>
+            <Dependent Role="tbMemberInfo">
+              <PropertyRef Name="AllyGrade_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberInfo_tbSCenterInfo">
+          <End Role="tbSCenterInfo" Type="dbTiderModel.Store.tbSCenterInfo" Multiplicity="1" />
+          <End Role="tbMemberInfo" Type="dbTiderModel.Store.tbMemberInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbSCenterInfo">
+              <PropertyRef Name="SCenter_ID" />
+            </Principal>
+            <Dependent Role="tbMemberInfo">
+              <PropertyRef Name="SCenter_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberUpgradeRecord_tbMemberInfo">
+          <End Role="tbMemberInfo" Type="dbTiderModel.Store.tbMemberInfo" Multiplicity="1" />
+          <End Role="tbMemberUpgradeRecord" Type="dbTiderModel.Store.tbMemberUpgradeRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMemberInfo">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="tbMemberUpgradeRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRoleMenu_tbRole">
+          <End Role="tbRole" Type="dbTiderModel.Store.tbRole" Multiplicity="1" />
+          <End Role="tbRoleMenu" Type="dbTiderModel.Store.tbRoleMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbRole">
+              <PropertyRef Name="Role_ID" />
+            </Principal>
+            <Dependent Role="tbRoleMenu">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbSCenterAccount_tbSCenterInfo">
+          <End Role="tbSCenterInfo" Type="dbTiderModel.Store.tbSCenterInfo" Multiplicity="1" />
+          <End Role="tbSCenterAccount" Type="dbTiderModel.Store.tbSCenterAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbSCenterInfo">
+              <PropertyRef Name="SCenter_ID" />
+            </Principal>
+            <Dependent Role="tbSCenterAccount">
+              <PropertyRef Name="SCenter_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbSCenterAccountChangeRecord_tbSCenterInfo">
+          <End Role="tbSCenterInfo" Type="dbTiderModel.Store.tbSCenterInfo" Multiplicity="1" />
+          <End Role="tbSCenterAccountChangeRecord" Type="dbTiderModel.Store.tbSCenterAccountChangeRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbSCenterInfo">
+              <PropertyRef Name="SCenter_ID" />
+            </Principal>
+            <Dependent Role="tbSCenterAccountChangeRecord">
+              <PropertyRef Name="SCenter_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbTiderModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="dbTiderEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbAdmin" EntityType="dbTiderModel.tbAdmin" />
+          <EntitySet Name="tbAllyGrade" EntityType="dbTiderModel.tbAllyGrade" />
+          <EntitySet Name="tbBonusConfig" EntityType="dbTiderModel.tbBonusConfig" />
+          <EntitySet Name="tbBonusRecord" EntityType="dbTiderModel.tbBonusRecord" />
+          <EntitySet Name="tbCart" EntityType="dbTiderModel.tbCart" />
+          <EntitySet Name="tbCity" EntityType="dbTiderModel.tbCity" />
+          <EntitySet Name="tbDataBaseState" EntityType="dbTiderModel.tbDataBaseState" />
+          <EntitySet Name="tbJmail" EntityType="dbTiderModel.tbJmail" />
+          <EntitySet Name="tbMemberAccount" EntityType="dbTiderModel.tbMemberAccount" />
+          <EntitySet Name="tbMemberAccountChangeRecord" EntityType="dbTiderModel.tbMemberAccountChangeRecord" />
+          <EntitySet Name="tbMemberBonusTotal" EntityType="dbTiderModel.tbMemberBonusTotal" />
+          <EntitySet Name="tbMemberInfo" EntityType="dbTiderModel.tbMemberInfo" />
+          <EntitySet Name="tbMemberUpgradeRecord" EntityType="dbTiderModel.tbMemberUpgradeRecord" />
+          <EntitySet Name="tbMessage" EntityType="dbTiderModel.tbMessage" />
+          <EntitySet Name="tbNews" EntityType="dbTiderModel.tbNews" />
+          <EntitySet Name="tbProduct" EntityType="dbTiderModel.tbProduct" />
+          <EntitySet Name="tbProvince" EntityType="dbTiderModel.tbProvince" />
+          <EntitySet Name="tbRole" EntityType="dbTiderModel.tbRole" />
+          <EntitySet Name="tbRoleMenu" EntityType="dbTiderModel.tbRoleMenu" />
+          <EntitySet Name="tbSCenterAccount" EntityType="dbTiderModel.tbSCenterAccount" />
+          <EntitySet Name="tbSCenterAccountChangeRecord" EntityType="dbTiderModel.tbSCenterAccountChangeRecord" />
+          <EntitySet Name="tbSCenterInfo" EntityType="dbTiderModel.tbSCenterInfo" />
+          <EntitySet Name="tbShoppingRecord" EntityType="dbTiderModel.tbShoppingRecord" />
+          <EntitySet Name="tbWithdrawRules" EntityType="dbTiderModel.tbWithdrawRules" />
+          <AssociationSet Name="FK_tbAdmin_tbRole" Association="dbTiderModel.FK_tbAdmin_tbRole">
+            <End Role="tbRole" EntitySet="tbRole" />
+            <End Role="tbAdmin" EntitySet="tbAdmin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberInfo_tbAllyGrade" Association="dbTiderModel.FK_tbMemberInfo_tbAllyGrade">
+            <End Role="tbAllyGrade" EntitySet="tbAllyGrade" />
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbBonusRecord_tbMemberInfo" Association="dbTiderModel.FK_tbBonusRecord_tbMemberInfo">
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+            <End Role="tbBonusRecord" EntitySet="tbBonusRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberAccount_tbMemberInfo" Association="dbTiderModel.FK_tbMemberAccount_tbMemberInfo">
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+            <End Role="tbMemberAccount" EntitySet="tbMemberAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberAccountChangeRecord_tbMemberInfo" Association="dbTiderModel.FK_tbMemberAccountChangeRecord_tbMemberInfo">
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+            <End Role="tbMemberAccountChangeRecord" EntitySet="tbMemberAccountChangeRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberBonusTotal_tbMemberInfo" Association="dbTiderModel.FK_tbMemberBonusTotal_tbMemberInfo">
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+            <End Role="tbMemberBonusTotal" EntitySet="tbMemberBonusTotal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberInfo_tbSCenterInfo" Association="dbTiderModel.FK_tbMemberInfo_tbSCenterInfo">
+            <End Role="tbSCenterInfo" EntitySet="tbSCenterInfo" />
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMemberUpgradeRecord_tbMemberInfo" Association="dbTiderModel.FK_tbMemberUpgradeRecord_tbMemberInfo">
+            <End Role="tbMemberInfo" EntitySet="tbMemberInfo" />
+            <End Role="tbMemberUpgradeRecord" EntitySet="tbMemberUpgradeRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbRoleMenu_tbRole" Association="dbTiderModel.FK_tbRoleMenu_tbRole">
+            <End Role="tbRole" EntitySet="tbRole" />
+            <End Role="tbRoleMenu" EntitySet="tbRoleMenu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbSCenterAccount_tbSCenterInfo" Association="dbTiderModel.FK_tbSCenterAccount_tbSCenterInfo">
+            <End Role="tbSCenterInfo" EntitySet="tbSCenterInfo" />
+            <End Role="tbSCenterAccount" EntitySet="tbSCenterAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbSCenterAccountChangeRecord_tbSCenterInfo" Association="dbTiderModel.FK_tbSCenterAccountChangeRecord_tbSCenterInfo">
+            <End Role="tbSCenterInfo" EntitySet="tbSCenterInfo" />
+            <End Role="tbSCenterAccountChangeRecord" EntitySet="tbSCenterAccountChangeRecord" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbAdmin">
+          <Key>
+            <PropertyRef Name="Admin_ID" />
+          </Key>
+          <Property Name="Admin_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role_ID" Type="Int32" Nullable="false" />
+          <Property Name="Admin_Alias" Type="String" Nullable="false" MaxLength="49" Unicode="true" FixedLength="false" />
+          <Property Name="Admin_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Admin_Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Delete" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbRole" Relationship="dbTiderModel.FK_tbAdmin_tbRole" FromRole="tbAdmin" ToRole="tbRole" />
+        </EntityType>
+        <EntityType Name="tbAllyGrade">
+          <Key>
+            <PropertyRef Name="AllyGrade_ID" />
+          </Key>
+          <Property Name="AllyGrade_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AllyGrade_Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Money" Type="Double" Nullable="false" />
+          <Property Name="PV" Type="Double" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Gift_Money" Type="Double" Nullable="false" />
+          <Property Name="Gift_PV" Type="Double" Nullable="false" />
+          <Property Name="Is_Delete" Type="Boolean" Nullable="false" />
+          <Property Name="Is_Hide" Type="Boolean" Nullable="false" />
+          <Property Name="MaxZhaoSangJiang" Type="Double" Nullable="false" />
+          <Property Name="MaxShiCangBuTieFactor" Type="Double" Nullable="false" />
+          <NavigationProperty Name="tbMemberInfo" Relationship="dbTiderModel.FK_tbMemberInfo_tbAllyGrade" FromRole="tbAllyGrade" ToRole="tbMemberInfo" />
+        </EntityType>
+        <EntityType Name="tbBonusConfig">
+          <Key>
+            <PropertyRef Name="Category_ID" />
+          </Key>
+          <Property Name="Category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Balance_Num" Type="Int32" Nullable="false" />
+          <Property Name="JSNum" Type="Int32" Nullable="false" />
+          <Property Name="Create_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TuiJian_Para1" Type="Double" Nullable="false" />
+          <Property Name="CenJiang_Para1" Type="Double" Nullable="false" />
+          <Property Name="CenJiang_Para2" Type="Double" Nullable="false" />
+          <Property Name="CenJiang_Para3" Type="Double" Nullable="false" />
+          <Property Name="JianDian_Para1" Type="Double" Nullable="false" />
+          <Property Name="JianDian_Para2" Type="Int32" Nullable="false" />
+          <Property Name="ZiJianGuanLi_Para1" Type="Double" Nullable="false" />
+          <Property Name="ZiJianGuanLi_Para2" Type="Double" Nullable="false" />
+          <Property Name="ZiJianGuanLi_Para3" Type="Double" Nullable="false" />
+          <Property Name="ZiJianGuanLi_Para4" Type="Double" Nullable="false" />
+          <Property Name="ZiJianGuanLi_Para5" Type="Double" Nullable="false" />
+          <Property Name="DianBu_Para1" Type="Double" Nullable="false" />
+          <Property Name="FengHong_Para1" Type="Double" Nullable="false" />
+          <Property Name="FengHong_Para2" Type="Double" Nullable="false" />
+          <Property Name="CeJiang_Para1" Type="Double" Nullable="false" />
+          <Property Name="CeJiang_Para2" Type="Double" Nullable="false" />
+          <Property Name="FangJiang_Para1" Type="Double" Nullable="false" />
+          <Property Name="FangJiang_Para2" Type="Double" Nullable="false" />
+          <Property Name="LYou_Para1" Type="Double" Nullable="false" />
+          <Property Name="LYou_Para2" Type="Double" Nullable="false" />
+          <Property Name="FuXiao_Para1" Type="Double" Nullable="false" />
+          <Property Name="FuXiao_Para2" Type="Double" Nullable="false" />
+          <Property Name="FuXiao_Para3" Type="Double" Nullable="false" />
+          <Property Name="FuXiao_Para4" Type="Double" Nullable="false" />
+          <Property Name="XianDai_Para1" Type="Double" Nullable="false" />
+          <Property Name="SiDai_Para1" Type="Double" Nullable="false" />
+          <Property Name="SenDai_Para1" Type="Double" Nullable="false" />
+          <Property Name="Tax_Para1" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbBonusRecord">
+          <Key>
+            <PropertyRef Name="Record_ID" />
+          </Key>
+          <Property Name="Record_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Member_ID" Type="Int32" Nullable="false" />
+          <Property Name="Current_Bonus" Type="Double" Nullable="false" />
+          <Property Name="Bonus_Description" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Bonus_Producer" Type="Int32" Nullable="false" />
+          <Property Name="Balance_Num" Type="Int32" Nullable="false" />
+          <Property Name="Operator_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbMemberInfo" Relationship="dbTiderModel.FK_tbBonusRecord_tbMemberInfo" FromRole="tbBonusRecord" ToRole="tbMemberInfo" />
+        </EntityType>
+        <EntityType Name="tbCart">
+          <Key>
+            <PropertyRef Name="Cart_ID" />
+          </Key>
+          <Property Name="Cart_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_ID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Customer_Type" Type="Int32" Nullable="false" />
+          <Property Name="Buy_Count" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbCity">
+          <Key>
+            <PropertyRef Name="City_ID" />
+          </Key>
+          <Property Name="City_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Province_ID" Type="Int32" Nullable="false" />
+          <Property Name="City_Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbDataBaseState">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Is_Closed" Type="Boolean" Nullable="false" />
+          <Property Name="Reason" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Operator_ID" Type="Int32" Nullable="false" />
+          <Property Name="Operator_Time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbJmail">
+          <Key>
+            <PropertyRef Name="Mail_ID" />
+            <PropertyRef Name="Mail_Content" />
+            <PropertyRef Name="Receiver_MailAddress" />
+            <PropertyRef Name="Send_Time" />
+            <PropertyRef Name="Mail_Type" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="Is_Failed" />
+          </Key>
+          <Property Name="Mail_ID" Type="Int32" Nullable="false" />
+          <Property Name="Mail_Content" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="Receiver_MailAddress" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="Send_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Mail_Type" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Failed" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbMemberAccount">
+          <Key>
+            <PropertyRef Name="Member_ID" />
+          </Key>
+          <Property Name="Member_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sum_Bonus" Type="Double" Nullable="false" />
+          <Property Name="Sum_ECurrency" Type="Double" Nullable="false" />
+          <Property Name="Sum_FuXiao" Type="Double" Nullable="false" />
+          <Property Name="Left_Bonus" Type="Double" Nullable="false" />
+          <Property Name="Left_ECurrency" Type="Double" Nullable="false" />
+          <Property Name="Left_FuXiao" Type="Double" Nullable="false" />
+          <Property Name="Update_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbMemberInfo" Relationship="dbTiderModel.FK_tbMemberAccount_tbMemberInfo" FromRole="tbMemberAccount" ToRole="tbMemberInfo" />
+        </EntityType>
+        <EntityType Name="tbMemberAccountChangeRecord">
+          <Key>
+            <PropertyRef Name="Record_ID" />
+          </Key>
+          <Property Name="Record_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Member_ID" Type="Int32" Nullable="false" />
+          <Property Name="Money" Type="Double" Nullable="false" />
+          <Property Name="Account_type" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="800" Unicode="true" FixedLength="false" />
+          <Property Name="Operator_ID" Type="Int32" Nullable="false" />
+          <Property Name="Operator_Type" Type="Int32" Nullable="false" />
+          <Property Name="Operator_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbMemberInfo" Relationship="dbTiderModel.FK_tbMemberAccountChangeRecord_tbMemberInfo" FromRole="tbMemberAccountChangeRecord" ToRole="tbMemberInfo" />
+        </EntityType>
+        <EntityType Name="tbMemberBonusTotal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Member_ID" Type="Int32" Nullable="false" />
+          <Property Name="Balance_Num" Type="Int32" Nullable="false" />
+          <Property Name="Sum_TuiJian" Type="Double" Nullable="false" />
+          <Property Name="Current_TuiJian" Type="Double" Nullable="false" />
+          <Property Name="Sum_CenJiang" Type="Double" Nullable="false" />
+          <Property Name="Current_CenJiang" Type="Double" Nullable="false" />
+          <Property Name="Sum_JianDian" Type="Double" Nullable="false" />
+          <Property Name="Current_JianDian" Type="Double" Nullable="false" />
+          <Property Name="Sum_ZiJianGuanLi" Type="Double" Nullable="false" />
+          <Property Name="Current_ZiJianGuanLi" Type="Double" Nullable="false" />
+          <Property Name="Sum_DianBu" Type="Double" Nullable="false" />
+          <Property Name="Current_DianBu" Type="Double" Nullable="false" />
+          <Property Name="Sum_FenHong" Type="Double" Nullable="false" />
+          <Property Name="Current_FenHong" Type="Double" Nullable="false" />
+          <Property Name="Sum_CeJiang" Type="Double" Nullable="false" />
+          <Property Name="Current_CeJiang" Type="Double" Nullable="false" />
+          <Property Name="Sum_FangJiang" Type="Double" Nullable="false" />
+          <Property Name="Current_FangJiang" Type="Double" Nullable="false" />
+          <Property Name="Sum_Lyou" Type="Double" Nullable="false" />
+          <Property Name="Current_Lyou" Type="Double" Nullable="false" />
+          <Property Name="Sum_DaiLiJiang" Type="Double" Nullable="false" />
+          <Property Name="Current_DaiLiJiang" Type="Double" Nullable="false" />
+          <Property Name="Sum_LinSou" Type="Double" Nullable="false" />
+          <Property Name="Current_LinSou" Type="Double" Nullable="false" />
+          <Property Name="Sum_FuXiao" Type="Double" Nullable="false" />
+          <Property Name="Current_FuXiao" Type="Double" Nullable="false" />
+          <Property Name="Sum_Tax" Type="Double" Nullable="false" />
+          <Property Name="Current_Tax" Type="Double" Nullable="false" />
+          <Property Name="Sum_Total" Type="Double" Nullable="false" />
+          <Property Name="Current_Total" Type="Double" Nullable="false" />
+          <Property Name="Update_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Is_Released" Type="Boolean" Nullable="false" />
+          <Property Name="Released_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Is_Cancelled" Type="Boolean" Nullable="false" />
+          <Property Name="Cancelled_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbMemberInfo" Relationship="dbTiderModel.FK_tbMemberBonusTotal_tbMemberInfo" FromRole="tbMemberBonusTotal" ToRole="tbMemberInfo" />
+        </EntityType>
+        <EntityType Name="tbMemberInfo">
+          <Key>
+            <PropertyRef Name="Member_ID" />
+          </Key>
+          <Property Name="Member_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="P_ID" Type="Int32" Nullable="false" />
+          <Property Name="R_ID" Type="Int32" Nullable="false" />
+          <Property Name="Qu" Type="Int32" Nullable="false" />
+          <Property Name="P_IDs" Type="Int32" Nullable="false" />
+          <Property Name="R_IDs" Type="Int32" Nullable="false" />
+          <Property Name="P_Depth" Type="Int32" Nullable="false" />
+          <Property Name="R_Depth" Type="Int32" Nullable="false" />
+          <Property Name="Depth_FilledAll" Type="Int32" Nullable="false" />
+          <Property Name="P_ChildNum" Type="Int32" Nullable="false" />
+          <Property Name="Left_Seven" Type="Int32" Nullable="false" />
+          <Property Name="Right_Seven" Type="Int32" Nullable="false" />
+          <Property Name="P_Sum_ThreeLayer" Type="Int32" Nullable="false" />
+          <Property Name="R_ChildNum" Type="Int32" Nullable="false" />
+          <Property Name="A_Sum_History" Type="Double" Nullable="false" />
+          <Property Name="A_Sum_Add" Type="Double" Nullable="false" />
+          <Property Name="A_Sum_Nocash" Type="Double" Nullable="false" />
+          <Property Name="A_Member_Count" Type="Int32" Nullable="false" />
+          <Property Name="B_Sum_History" Type="Double" Nullable="false" />
+          <Property Name="B_Sum_Add" Type="Double" Nullable="false" />
+          <Property Name="B_Sum_Nocash" Type="Double" Nullable="false" />
+          <Property Name="B_Member_Count" Type="Int32" Nullable="false" />
+          <Property Name="R_Sum_History" Type="Double" Nullable="false" />
+          <Property Name="R_Sum_Add" Type="Double" Nullable="false" />
+          <Property Name="R_Member_Count" Type="Int32" Nullable="false" />
+          <Property Name="P_Sum_FuxXiao" Type="Double" Nullable="false" />
+          <Property Name="P_Current_FuXiao" Type="Double" Nullable="false" />
+          <Property Name="BenRen_Sum_FuXiao" Type="Double" Nullable="false" />
+          <Property Name="BenRen_Current_FuXiao" Type="Double" Nullable="false" />
+          <Property Name="BenRen_BenYue_FuXiao" Type="Double" Nullable="false" />
+          <Property Name="P_Sum_Retail" Type="Double" Nullable="false" />
+          <Property Name="P_Current_Retail" Type="Double" Nullable="false" />
+          <Property Name="BenRen_Sum_Retail" Type="Double" Nullable="false" />
+          <Property Name="BenRen_Current_Retail" Type="Double" Nullable="false" />
+          <Property Name="Member_Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Member_Alias" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Member_RealName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="First_Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Second_Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Sex" Type="Boolean" Nullable="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Bank_Account" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Open_Bank" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address_ID" Type="Int32" Nullable="false" />
+          <Property Name="DetailAddress" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Manager_Level" Type="Int32" Nullable="false" />
+          <Property Name="AllyGrade_ID" Type="Int32" Nullable="false" />
+          <Property Name="Register_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="registrant_ID" Type="Int32" Nullable="false" />
+          <Property Name="registrant_Type" Type="Int32" Nullable="false" />
+          <Property Name="Is_Empty" Type="Boolean" Nullable="false" />
+          <Property Name="Is_Cancelled" Type="Boolean" Nullable="false" />
+          <Property Name="Is_Delete" Type="Boolean" Nullable="false" />
+          <Property Name="First_Money" Type="Double" Nullable="false" />
+          <Property Name="First_PV" Type="Double" Nullable="false" />
+          <Property Name="Real_Money" Type="Double" Nullable="false" />
+          <Property Name="Real_PV" Type="Double" Nullable="false" />
+          <Property Name="Sum_Money" Type="Double" Nullable="false" />
+          <Property Name="Sum_PV" Type="Double" Nullable="false" />
+          <Property Name="Balance_Num" Type="Int32" Nullable="false" />
+          <Property Name="SCenter_ID" Type="Int32" Nullable="false" />
+          <Property Name="Is_Send" Type="Boolean" Nullable="false" />
+          <Property Name="Is_Balanced" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbAllyGrade" Relationship="dbTiderModel.FK_tbMemberInfo_tbAllyGrade" FromRole="tbMemberInfo" ToRole="tbAllyGrade" />
+          <NavigationProperty Name="tbBonusRecord" Relationship="dbTiderModel.FK_tbBonusRecord_tbMemberInfo" FromRole="tbMemberInfo" ToRole="tbBonusRecord" />
+          <NavigationProperty Name="tbMemberAccount" Relationship="dbTiderModel.FK_tbMemberAccount_tbMemberInfo" FromRole="tbMemberInfo" ToRole="tbMemberAccount" />
+          <NavigationProperty Name="tbMemberAccountChangeRecord" Relationship="dbTiderModel.FK_tbMemberAccountChangeRecord_tbMemberInfo" FromRole="tbMemberInfo" ToRole="tbMemberAccountChangeRecord" />
+          <NavigationProperty Name="tbMemberBonusTotal" Relationship="dbTiderModel.FK_tbMemberBonusTotal_tbMemberInfo" FromRole="tbMemberInfo" ToRole="tbMemberBonusTotal" />
+          <NavigationProperty Name="tbSCenterInfo" Relationship="dbTiderModel.FK_tbMemberInfo_tbSCenterInfo" FromRole="tbMemberInfo" ToRole="tbSCenterInfo" />
+          <NavigationProperty Name="tbMemberUpgradeRecord" Relationship="dbTiderModel.FK_tbMemberUpgradeRecord_tbMemberInfo" FromRole="tbMemberInfo" ToRole="tbMemberUpgradeRecord" />
+        </EntityType>
+        <EntityType Name="tbMemberUpgradeRecord">
+          <Key>
+            <PropertyRef Name="Record_ID" />
+          </Key>
+          <Property Name="Record_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Member_ID" Type="Int32" Nullable="false" />
+          <Property Name="OldAllyGrade_ID" Type="Int32" Nullable="false" />
+          <Property Name="NewAllyGrade_ID" Type="Int32" Nullable="false" />
+          <Property Name="Money" Type="Double" Nullable="false" />
+          <Property Name="PV" Type="Double" Nullable="false" />
+          <Property Name="Operator_ID" Type="Int32" Nullable="false" />
+          <Property Name="Operate_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbMemberInfo" Relationship="dbTiderModel.FK_tbMemberUpgradeRecord_tbMemberInfo" FromRole="tbMemberUpgradeRecord" ToRole="tbMemberInfo" />
+        </EntityType>
+        <EntityType Name="tbMessage">
+          <Key>
+            <PropertyRef Name="Message_ID" />
+          </Key>
+          <Property Name="Message_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sender_ID" Type="Int32" Nullable="false" />
+          <Property Name="Sender_Type" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Send_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Receiver_ID" Type="Int32" Nullable="false" />
+          <Property Name="Receiver_Type" Type="Int32" Nullable="false" />
+          <Property Name="Message_Send" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Message_Reply" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Reply_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="State" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbNews">
+          <Key>
+            <PropertyRef Name="News_ID" />
+          </Key>
+          <Property Name="News_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="Editor" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Release_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Releaser_ID" Type="Int32" Nullable="false" />
+          <Property Name="Receiver_Type" Type="Int32" Nullable="false" />
+          <Property Name="Is_Delete" Type="Boolean" Nullable="false" />
+          <Property Name="Delete_Time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbProduct">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+          </Key>
+          <Property Name="Product_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product_Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Product_Alias" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="800" Unicode="true" FixedLength="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="PV" Type="Double" Nullable="false" />
+          <Property Name="Product_Code" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Product_Tag" Type="Int32" Nullable="false" />
+          <Property Name="Stocked_Num" Type="Int32" Nullable="false" />
+          <Property Name="SalesVolume" Type="Int32" Nullable="false" />
+          <Property Name="SendedVolume" Type="Int32" Nullable="false" />
+          <Property Name="Is_Delete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbProvince">
+          <Key>
+            <PropertyRef Name="Province_ID" />
+          </Key>
+          <Property Name="Province_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Province_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbRole">
+          <Key>
+            <PropertyRef Name="Role_ID" />
+          </Key>
+          <Property Name="Role_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role_Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Delete" Type="Boolean" Nullable="false" />
+          <Property Name="Is_Hide" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbAdmin" Relationship="dbTiderModel.FK_tbAdmin_tbRole" FromRole="tbRole" ToRole="tbAdmin" />
+          <NavigationProperty Name="tbRoleMenu" Relationship="dbTiderModel.FK_tbRoleMenu_tbRole" FromRole="tbRole" ToRole="tbRoleMenu" />
+        </EntityType>
+        <EntityType Name="tbRoleMenu">
+          <Key>
+            <PropertyRef Name="RoleMenu_ID" />
+          </Key>
+          <Property Name="RoleMenu_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role_ID" Type="Int32" Nullable="false" />
+          <Property Name="Menu_Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbRole" Relationship="dbTiderModel.FK_tbRoleMenu_tbRole" FromRole="tbRoleMenu" ToRole="tbRole" />
+        </EntityType>
+        <EntityType Name="tbSCenterAccount">
+          <Key>
+            <PropertyRef Name="SCenter_ID" />
+          </Key>
+          <Property Name="SCenter_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sum_ECurrency" Type="Double" Nullable="false" />
+          <Property Name="Sum_Cash" Type="Double" Nullable="false" />
+          <Property Name="Left_ECurrency" Type="Double" Nullable="false" />
+          <Property Name="Left_Cash" Type="Double" Nullable="false" />
+          <Property Name="Update_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbSCenterInfo" Relationship="dbTiderModel.FK_tbSCenterAccount_tbSCenterInfo" FromRole="tbSCenterAccount" ToRole="tbSCenterInfo" />
+        </EntityType>
+        <EntityType Name="tbSCenterAccountChangeRecord">
+          <Key>
+            <PropertyRef Name="Record_ID" />
+          </Key>
+          <Property Name="Record_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SCenter_ID" Type="Int32" Nullable="false" />
+          <Property Name="Money" Type="Double" Nullable="false" />
+          <Property Name="Account_type" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="800" Unicode="true" FixedLength="false" />
+          <Property Name="Operator_ID" Type="Int32" Nullable="false" />
+          <Property Name="Operator_Type" Type="Int32" Nullable="false" />
+          <Property Name="Operator_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbSCenterInfo" Relationship="dbTiderModel.FK_tbSCenterAccountChangeRecord_tbSCenterInfo" FromRole="tbSCenterAccountChangeRecord" ToRole="tbSCenterInfo" />
+        </EntityType>
+        <EntityType Name="tbSCenterInfo">
+          <Key>
+            <PropertyRef Name="SCenter_ID" />
+          </Key>
+          <Property Name="SCenter_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SCenter_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ServinceCenter_RealName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="First_Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Second_Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Scenter_Level" Type="Int32" Nullable="false" />
+          <Property Name="Address_ID" Type="Int32" Nullable="false" />
+          <Property Name="DetailAddress" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Delete" Type="Boolean" Nullable="false" />
+          <Property Name="SCenterManager_ID" Type="Int32" Nullable="false" />
+          <Property Name="SCenterManager_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SCenterManager_Phone" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbMemberInfo" Relationship="dbTiderModel.FK_tbMemberInfo_tbSCenterInfo" FromRole="tbSCenterInfo" ToRole="tbMemberInfo" />
+          <NavigationProperty Name="tbSCenterAccount" Relationship="dbTiderModel.FK_tbSCenterAccount_tbSCenterInfo" FromRole="tbSCenterInfo" ToRole="tbSCenterAccount" />
+          <NavigationProperty Name="tbSCenterAccountChangeRecord" Relationship="dbTiderModel.FK_tbSCenterAccountChangeRecord_tbSCenterInfo" FromRole="tbSCenterInfo" ToRole="tbSCenterAccountChangeRecord" />
+        </EntityType>
+        <EntityType Name="tbShoppingRecord">
+          <Key>
+            <PropertyRef Name="Record_ID" />
+          </Key>
+          <Property Name="Record_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Order_ID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Product_ID" Type="Int32" Nullable="false" />
+          <Property Name="Customer_ID" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Customer_Type" Type="Int32" Nullable="false" />
+          <Property Name="Buy_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Product_Name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Buy_Count" Type="Int32" Nullable="false" />
+          <Property Name="Sum_Price" Type="Double" Nullable="false" />
+          <Property Name="Sum_PV" Type="Double" Nullable="false" />
+          <Property Name="Receiver_Name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Receiver_Address" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Receiver_Phone" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Send_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Operator_ID" Type="Int32" Nullable="false" />
+          <Property Name="Express_Info" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbWithdrawRules">
+          <Key>
+            <PropertyRef Name="Limit_ID" />
+          </Key>
+          <Property Name="Limit_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lower_Money" Type="Double" Nullable="false" />
+          <Property Name="uper_Money" Type="Double" Nullable="false" />
+          <Property Name="HandlingFee" Type="Double" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tbAdmin_tbRole">
+          <End Role="tbRole" Type="dbTiderModel.tbRole" Multiplicity="1" />
+          <End Role="tbAdmin" Type="dbTiderModel.tbAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbRole">
+              <PropertyRef Name="Role_ID" />
+            </Principal>
+            <Dependent Role="tbAdmin">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberInfo_tbAllyGrade">
+          <End Role="tbAllyGrade" Type="dbTiderModel.tbAllyGrade" Multiplicity="1" />
+          <End Role="tbMemberInfo" Type="dbTiderModel.tbMemberInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbAllyGrade">
+              <PropertyRef Name="AllyGrade_ID" />
+            </Principal>
+            <Dependent Role="tbMemberInfo">
+              <PropertyRef Name="AllyGrade_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbBonusRecord_tbMemberInfo">
+          <End Role="tbMemberInfo" Type="dbTiderModel.tbMemberInfo" Multiplicity="1" />
+          <End Role="tbBonusRecord" Type="dbTiderModel.tbBonusRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMemberInfo">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="tbBonusRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberAccount_tbMemberInfo">
+          <End Role="tbMemberInfo" Type="dbTiderModel.tbMemberInfo" Multiplicity="1" />
+          <End Role="tbMemberAccount" Type="dbTiderModel.tbMemberAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbMemberInfo">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="tbMemberAccount">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberAccountChangeRecord_tbMemberInfo">
+          <End Role="tbMemberInfo" Type="dbTiderModel.tbMemberInfo" Multiplicity="1" />
+          <End Role="tbMemberAccountChangeRecord" Type="dbTiderModel.tbMemberAccountChangeRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMemberInfo">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="tbMemberAccountChangeRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberBonusTotal_tbMemberInfo">
+          <End Role="tbMemberInfo" Type="dbTiderModel.tbMemberInfo" Multiplicity="1" />
+          <End Role="tbMemberBonusTotal" Type="dbTiderModel.tbMemberBonusTotal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMemberInfo">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="tbMemberBonusTotal">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberInfo_tbSCenterInfo">
+          <End Role="tbSCenterInfo" Type="dbTiderModel.tbSCenterInfo" Multiplicity="1" />
+          <End Role="tbMemberInfo" Type="dbTiderModel.tbMemberInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbSCenterInfo">
+              <PropertyRef Name="SCenter_ID" />
+            </Principal>
+            <Dependent Role="tbMemberInfo">
+              <PropertyRef Name="SCenter_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMemberUpgradeRecord_tbMemberInfo">
+          <End Role="tbMemberInfo" Type="dbTiderModel.tbMemberInfo" Multiplicity="1" />
+          <End Role="tbMemberUpgradeRecord" Type="dbTiderModel.tbMemberUpgradeRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMemberInfo">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="tbMemberUpgradeRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbRoleMenu_tbRole">
+          <End Role="tbRole" Type="dbTiderModel.tbRole" Multiplicity="1" />
+          <End Role="tbRoleMenu" Type="dbTiderModel.tbRoleMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbRole">
+              <PropertyRef Name="Role_ID" />
+            </Principal>
+            <Dependent Role="tbRoleMenu">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbSCenterAccount_tbSCenterInfo">
+          <End Role="tbSCenterInfo" Type="dbTiderModel.tbSCenterInfo" Multiplicity="1" />
+          <End Role="tbSCenterAccount" Type="dbTiderModel.tbSCenterAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbSCenterInfo">
+              <PropertyRef Name="SCenter_ID" />
+            </Principal>
+            <Dependent Role="tbSCenterAccount">
+              <PropertyRef Name="SCenter_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbSCenterAccountChangeRecord_tbSCenterInfo">
+          <End Role="tbSCenterInfo" Type="dbTiderModel.tbSCenterInfo" Multiplicity="1" />
+          <End Role="tbSCenterAccountChangeRecord" Type="dbTiderModel.tbSCenterAccountChangeRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbSCenterInfo">
+              <PropertyRef Name="SCenter_ID" />
+            </Principal>
+            <Dependent Role="tbSCenterAccountChangeRecord">
+              <PropertyRef Name="SCenter_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbTiderModelStoreContainer" CdmEntityContainer="dbTiderEntities">
+          <EntitySetMapping Name="tbAdmin">
+            <EntityTypeMapping TypeName="dbTiderModel.tbAdmin">
+              <MappingFragment StoreEntitySet="tbAdmin">
+                <ScalarProperty Name="Admin_ID" ColumnName="Admin_ID" />
+                <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+                <ScalarProperty Name="Admin_Alias" ColumnName="Admin_Alias" />
+                <ScalarProperty Name="Admin_Name" ColumnName="Admin_Name" />
+                <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+                <ScalarProperty Name="Is_Delete" ColumnName="Is_Delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbAllyGrade">
+            <EntityTypeMapping TypeName="dbTiderModel.tbAllyGrade">
+              <MappingFragment StoreEntitySet="tbAllyGrade">
+                <ScalarProperty Name="AllyGrade_ID" ColumnName="AllyGrade_ID" />
+                <ScalarProperty Name="AllyGrade_Name" ColumnName="AllyGrade_Name" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="PV" ColumnName="PV" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Gift_Money" ColumnName="Gift_Money" />
+                <ScalarProperty Name="Gift_PV" ColumnName="Gift_PV" />
+                <ScalarProperty Name="Is_Delete" ColumnName="Is_Delete" />
+                <ScalarProperty Name="Is_Hide" ColumnName="Is_Hide" />
+                <ScalarProperty Name="MaxZhaoSangJiang" ColumnName="MaxZhaoSangJiang" />
+                <ScalarProperty Name="MaxShiCangBuTieFactor" ColumnName="MaxShiCangBuTieFactor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbBonusConfig">
+            <EntityTypeMapping TypeName="dbTiderModel.tbBonusConfig">
+              <MappingFragment StoreEntitySet="tbBonusConfig">
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+                <ScalarProperty Name="Balance_Num" ColumnName="Balance_Num" />
+                <ScalarProperty Name="JSNum" ColumnName="JSNum" />
+                <ScalarProperty Name="Create_Time" ColumnName="Create_Time" />
+                <ScalarProperty Name="TuiJian_Para1" ColumnName="TuiJian_Para1" />
+                <ScalarProperty Name="CenJiang_Para1" ColumnName="CenJiang_Para1" />
+                <ScalarProperty Name="CenJiang_Para2" ColumnName="CenJiang_Para2" />
+                <ScalarProperty Name="CenJiang_Para3" ColumnName="CenJiang_Para3" />
+                <ScalarProperty Name="JianDian_Para1" ColumnName="JianDian_Para1" />
+                <ScalarProperty Name="JianDian_Para2" ColumnName="JianDian_Para2" />
+                <ScalarProperty Name="ZiJianGuanLi_Para1" ColumnName="ZiJianGuanLi_Para1" />
+                <ScalarProperty Name="ZiJianGuanLi_Para2" ColumnName="ZiJianGuanLi_Para2" />
+                <ScalarProperty Name="ZiJianGuanLi_Para3" ColumnName="ZiJianGuanLi_Para3" />
+                <ScalarProperty Name="ZiJianGuanLi_Para4" ColumnName="ZiJianGuanLi_Para4" />
+                <ScalarProperty Name="ZiJianGuanLi_Para5" ColumnName="ZiJianGuanLi_Para5" />
+                <ScalarProperty Name="DianBu_Para1" ColumnName="DianBu_Para1" />
+                <ScalarProperty Name="FengHong_Para1" ColumnName="FengHong_Para1" />
+                <ScalarProperty Name="FengHong_Para2" ColumnName="FengHong_Para2" />
+                <ScalarProperty Name="CeJiang_Para1" ColumnName="CeJiang_Para1" />
+                <ScalarProperty Name="CeJiang_Para2" ColumnName="CeJiang_Para2" />
+                <ScalarProperty Name="FangJiang_Para1" ColumnName="FangJiang_Para1" />
+                <ScalarProperty Name="FangJiang_Para2" ColumnName="FangJiang_Para2" />
+                <ScalarProperty Name="LYou_Para1" ColumnName="LYou_Para1" />
+                <ScalarProperty Name="LYou_Para2" ColumnName="LYou_Para2" />
+                <ScalarProperty Name="FuXiao_Para1" ColumnName="FuXiao_Para1" />
+                <ScalarProperty Name="FuXiao_Para2" ColumnName="FuXiao_Para2" />
+                <ScalarProperty Name="FuXiao_Para3" ColumnName="FuXiao_Para3" />
+                <ScalarProperty Name="FuXiao_Para4" ColumnName="FuXiao_Para4" />
+                <ScalarProperty Name="XianDai_Para1" ColumnName="XianDai_Para1" />
+                <ScalarProperty Name="SiDai_Para1" ColumnName="SiDai_Para1" />
+                <ScalarProperty Name="SenDai_Para1" ColumnName="SenDai_Para1" />
+                <ScalarProperty Name="Tax_Para1" ColumnName="Tax_Para1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbBonusRecord">
+            <EntityTypeMapping TypeName="dbTiderModel.tbBonusRecord">
+              <MappingFragment StoreEntitySet="tbBonusRecord">
+                <ScalarProperty Name="Record_ID" ColumnName="Record_ID" />
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="Current_Bonus" ColumnName="Current_Bonus" />
+                <ScalarProperty Name="Bonus_Description" ColumnName="Bonus_Description" />
+                <ScalarProperty Name="Bonus_Producer" ColumnName="Bonus_Producer" />
+                <ScalarProperty Name="Balance_Num" ColumnName="Balance_Num" />
+                <ScalarProperty Name="Operator_Time" ColumnName="Operator_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCart">
+            <EntityTypeMapping TypeName="dbTiderModel.tbCart">
+              <MappingFragment StoreEntitySet="tbCart">
+                <ScalarProperty Name="Cart_ID" ColumnName="Cart_ID" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
+                <ScalarProperty Name="Buy_Count" ColumnName="Buy_Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCity">
+            <EntityTypeMapping TypeName="dbTiderModel.tbCity">
+              <MappingFragment StoreEntitySet="tbCity">
+                <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+                <ScalarProperty Name="Province_ID" ColumnName="Province_ID" />
+                <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbDataBaseState">
+            <EntityTypeMapping TypeName="dbTiderModel.tbDataBaseState">
+              <MappingFragment StoreEntitySet="tbDataBaseState">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Is_Closed" ColumnName="Is_Closed" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Operator_ID" ColumnName="Operator_ID" />
+                <ScalarProperty Name="Operator_Time" ColumnName="Operator_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbJmail">
+            <EntityTypeMapping TypeName="dbTiderModel.tbJmail">
+              <MappingFragment StoreEntitySet="tbJmail">
+                <ScalarProperty Name="Mail_ID" ColumnName="Mail_ID" />
+                <ScalarProperty Name="Mail_Content" ColumnName="Mail_Content" />
+                <ScalarProperty Name="Receiver_MailAddress" ColumnName="Receiver_MailAddress" />
+                <ScalarProperty Name="Send_Time" ColumnName="Send_Time" />
+                <ScalarProperty Name="Mail_Type" ColumnName="Mail_Type" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Is_Failed" ColumnName="Is_Failed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMemberAccount">
+            <EntityTypeMapping TypeName="dbTiderModel.tbMemberAccount">
+              <MappingFragment StoreEntitySet="tbMemberAccount">
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="Sum_Bonus" ColumnName="Sum_Bonus" />
+                <ScalarProperty Name="Sum_ECurrency" ColumnName="Sum_ECurrency" />
+                <ScalarProperty Name="Sum_FuXiao" ColumnName="Sum_FuXiao" />
+                <ScalarProperty Name="Left_Bonus" ColumnName="Left_Bonus" />
+                <ScalarProperty Name="Left_ECurrency" ColumnName="Left_ECurrency" />
+                <ScalarProperty Name="Left_FuXiao" ColumnName="Left_FuXiao" />
+                <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMemberAccountChangeRecord">
+            <EntityTypeMapping TypeName="dbTiderModel.tbMemberAccountChangeRecord">
+              <MappingFragment StoreEntitySet="tbMemberAccountChangeRecord">
+                <ScalarProperty Name="Record_ID" ColumnName="Record_ID" />
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="Account_type" ColumnName="Account_type" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Operator_ID" ColumnName="Operator_ID" />
+                <ScalarProperty Name="Operator_Type" ColumnName="Operator_Type" />
+                <ScalarProperty Name="Operator_Time" ColumnName="Operator_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMemberBonusTotal">
+            <EntityTypeMapping TypeName="dbTiderModel.tbMemberBonusTotal">
+              <MappingFragment StoreEntitySet="tbMemberBonusTotal">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="Balance_Num" ColumnName="Balance_Num" />
+                <ScalarProperty Name="Sum_TuiJian" ColumnName="Sum_TuiJian" />
+                <ScalarProperty Name="Current_TuiJian" ColumnName="Current_TuiJian" />
+                <ScalarProperty Name="Sum_CenJiang" ColumnName="Sum_CenJiang" />
+                <ScalarProperty Name="Current_CenJiang" ColumnName="Current_CenJiang" />
+                <ScalarProperty Name="Sum_JianDian" ColumnName="Sum_JianDian" />
+                <ScalarProperty Name="Current_JianDian" ColumnName="Current_JianDian" />
+                <ScalarProperty Name="Sum_ZiJianGuanLi" ColumnName="Sum_ZiJianGuanLi" />
+                <ScalarProperty Name="Current_ZiJianGuanLi" ColumnName="Current_ZiJianGuanLi" />
+                <ScalarProperty Name="Sum_DianBu" ColumnName="Sum_DianBu" />
+                <ScalarProperty Name="Current_DianBu" ColumnName="Current_DianBu" />
+                <ScalarProperty Name="Sum_FenHong" ColumnName="Sum_FenHong" />
+                <ScalarProperty Name="Current_FenHong" ColumnName="Current_FenHong" />
+                <ScalarProperty Name="Sum_CeJiang" ColumnName="Sum_CeJiang" />
+                <ScalarProperty Name="Current_CeJiang" ColumnName="Current_CeJiang" />
+                <ScalarProperty Name="Sum_FangJiang" ColumnName="Sum_FangJiang" />
+                <ScalarProperty Name="Current_FangJiang" ColumnName="Current_FangJiang" />
+                <ScalarProperty Name="Sum_Lyou" ColumnName="Sum_Lyou" />
+                <ScalarProperty Name="Current_Lyou" ColumnName="Current_Lyou" />
+                <ScalarProperty Name="Sum_DaiLiJiang" ColumnName="Sum_DaiLiJiang" />
+                <ScalarProperty Name="Current_DaiLiJiang" ColumnName="Current_DaiLiJiang" />
+                <ScalarProperty Name="Sum_LinSou" ColumnName="Sum_LinSou" />
+                <ScalarProperty Name="Current_LinSou" ColumnName="Current_LinSou" />
+                <ScalarProperty Name="Sum_FuXiao" ColumnName="Sum_FuXiao" />
+                <ScalarProperty Name="Current_FuXiao" ColumnName="Current_FuXiao" />
+                <ScalarProperty Name="Sum_Tax" ColumnName="Sum_Tax" />
+                <ScalarProperty Name="Current_Tax" ColumnName="Current_Tax" />
+                <ScalarProperty Name="Sum_Total" ColumnName="Sum_Total" />
+                <ScalarProperty Name="Current_Total" ColumnName="Current_Total" />
+                <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+                <ScalarProperty Name="Is_Released" ColumnName="Is_Released" />
+                <ScalarProperty Name="Released_Time" ColumnName="Released_Time" />
+                <ScalarProperty Name="Is_Cancelled" ColumnName="Is_Cancelled" />
+                <ScalarProperty Name="Cancelled_Time" ColumnName="Cancelled_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMemberInfo">
+            <EntityTypeMapping TypeName="dbTiderModel.tbMemberInfo">
+              <MappingFragment StoreEntitySet="tbMemberInfo">
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="P_ID" ColumnName="P_ID" />
+                <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+                <ScalarProperty Name="Qu" ColumnName="Qu" />
+                <ScalarProperty Name="P_IDs" ColumnName="P_IDs" />
+                <ScalarProperty Name="R_IDs" ColumnName="R_IDs" />
+                <ScalarProperty Name="P_Depth" ColumnName="P_Depth" />
+                <ScalarProperty Name="R_Depth" ColumnName="R_Depth" />
+                <ScalarProperty Name="Depth_FilledAll" ColumnName="Depth_FilledAll" />
+                <ScalarProperty Name="P_ChildNum" ColumnName="P_ChildNum" />
+                <ScalarProperty Name="Left_Seven" ColumnName="Left_Seven" />
+                <ScalarProperty Name="Right_Seven" ColumnName="Right_Seven" />
+                <ScalarProperty Name="P_Sum_ThreeLayer" ColumnName="P_Sum_ThreeLayer" />
+                <ScalarProperty Name="R_ChildNum" ColumnName="R_ChildNum" />
+                <ScalarProperty Name="A_Sum_History" ColumnName="A_Sum_History" />
+                <ScalarProperty Name="A_Sum_Add" ColumnName="A_Sum_Add" />
+                <ScalarProperty Name="A_Sum_Nocash" ColumnName="A_Sum_Nocash" />
+                <ScalarProperty Name="A_Member_Count" ColumnName="A_Member_Count" />
+                <ScalarProperty Name="B_Sum_History" ColumnName="B_Sum_History" />
+                <ScalarProperty Name="B_Sum_Add" ColumnName="B_Sum_Add" />
+                <ScalarProperty Name="B_Sum_Nocash" ColumnName="B_Sum_Nocash" />
+                <ScalarProperty Name="B_Member_Count" ColumnName="B_Member_Count" />
+                <ScalarProperty Name="R_Sum_History" ColumnName="R_Sum_History" />
+                <ScalarProperty Name="R_Sum_Add" ColumnName="R_Sum_Add" />
+                <ScalarProperty Name="R_Member_Count" ColumnName="R_Member_Count" />
+                <ScalarProperty Name="P_Sum_FuxXiao" ColumnName="P_Sum_FuxXiao" />
+                <ScalarProperty Name="P_Current_FuXiao" ColumnName="P_Current_FuXiao" />
+                <ScalarProperty Name="BenRen_Sum_FuXiao" ColumnName="BenRen_Sum_FuXiao" />
+                <ScalarProperty Name="BenRen_Current_FuXiao" ColumnName="BenRen_Current_FuXiao" />
+                <ScalarProperty Name="BenRen_BenYue_FuXiao" ColumnName="BenRen_BenYue_FuXiao" />
+                <ScalarProperty Name="P_Sum_Retail" ColumnName="P_Sum_Retail" />
+                <ScalarProperty Name="P_Current_Retail" ColumnName="P_Current_Retail" />
+                <ScalarProperty Name="BenRen_Sum_Retail" ColumnName="BenRen_Sum_Retail" />
+                <ScalarProperty Name="BenRen_Current_Retail" ColumnName="BenRen_Current_Retail" />
+                <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+                <ScalarProperty Name="Member_Alias" ColumnName="Member_Alias" />
+                <ScalarProperty Name="Member_RealName" ColumnName="Member_RealName" />
+                <ScalarProperty Name="First_Password" ColumnName="First_Password" />
+                <ScalarProperty Name="Second_Password" ColumnName="Second_Password" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Bank_Account" ColumnName="Bank_Account" />
+                <ScalarProperty Name="Open_Bank" ColumnName="Open_Bank" />
+                <ScalarProperty Name="Address_ID" ColumnName="Address_ID" />
+                <ScalarProperty Name="DetailAddress" ColumnName="DetailAddress" />
+                <ScalarProperty Name="Manager_Level" ColumnName="Manager_Level" />
+                <ScalarProperty Name="AllyGrade_ID" ColumnName="AllyGrade_ID" />
+                <ScalarProperty Name="Register_Time" ColumnName="Register_Time" />
+                <ScalarProperty Name="registrant_ID" ColumnName="registrant_ID" />
+                <ScalarProperty Name="registrant_Type" ColumnName="registrant_Type" />
+                <ScalarProperty Name="Is_Empty" ColumnName="Is_Empty" />
+                <ScalarProperty Name="Is_Cancelled" ColumnName="Is_Cancelled" />
+                <ScalarProperty Name="Is_Delete" ColumnName="Is_Delete" />
+                <ScalarProperty Name="First_Money" ColumnName="First_Money" />
+                <ScalarProperty Name="First_PV" ColumnName="First_PV" />
+                <ScalarProperty Name="Real_Money" ColumnName="Real_Money" />
+                <ScalarProperty Name="Real_PV" ColumnName="Real_PV" />
+                <ScalarProperty Name="Sum_Money" ColumnName="Sum_Money" />
+                <ScalarProperty Name="Sum_PV" ColumnName="Sum_PV" />
+                <ScalarProperty Name="Balance_Num" ColumnName="Balance_Num" />
+                <ScalarProperty Name="SCenter_ID" ColumnName="SCenter_ID" />
+                <ScalarProperty Name="Is_Send" ColumnName="Is_Send" />
+                <ScalarProperty Name="Is_Balanced" ColumnName="Is_Balanced" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMemberUpgradeRecord">
+            <EntityTypeMapping TypeName="dbTiderModel.tbMemberUpgradeRecord">
+              <MappingFragment StoreEntitySet="tbMemberUpgradeRecord">
+                <ScalarProperty Name="Record_ID" ColumnName="Record_ID" />
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="OldAllyGrade_ID" ColumnName="OldAllyGrade_ID" />
+                <ScalarProperty Name="NewAllyGrade_ID" ColumnName="NewAllyGrade_ID" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="PV" ColumnName="PV" />
+                <ScalarProperty Name="Operator_ID" ColumnName="Operator_ID" />
+                <ScalarProperty Name="Operate_Time" ColumnName="Operate_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMessage">
+            <EntityTypeMapping TypeName="dbTiderModel.tbMessage">
+              <MappingFragment StoreEntitySet="tbMessage">
+                <ScalarProperty Name="Message_ID" ColumnName="Message_ID" />
+                <ScalarProperty Name="Sender_ID" ColumnName="Sender_ID" />
+                <ScalarProperty Name="Sender_Type" ColumnName="Sender_Type" />
+                <ScalarProperty Name="Send_Time" ColumnName="Send_Time" />
+                <ScalarProperty Name="Receiver_ID" ColumnName="Receiver_ID" />
+                <ScalarProperty Name="Receiver_Type" ColumnName="Receiver_Type" />
+                <ScalarProperty Name="Message_Send" ColumnName="Message_Send" />
+                <ScalarProperty Name="Message_Reply" ColumnName="Message_Reply" />
+                <ScalarProperty Name="Reply_Time" ColumnName="Reply_Time" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbNews">
+            <EntityTypeMapping TypeName="dbTiderModel.tbNews">
+              <MappingFragment StoreEntitySet="tbNews">
+                <ScalarProperty Name="News_ID" ColumnName="News_ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Editor" ColumnName="Editor" />
+                <ScalarProperty Name="Release_Time" ColumnName="Release_Time" />
+                <ScalarProperty Name="Releaser_ID" ColumnName="Releaser_ID" />
+                <ScalarProperty Name="Receiver_Type" ColumnName="Receiver_Type" />
+                <ScalarProperty Name="Is_Delete" ColumnName="Is_Delete" />
+                <ScalarProperty Name="Delete_Time" ColumnName="Delete_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbProduct">
+            <EntityTypeMapping TypeName="dbTiderModel.tbProduct">
+              <MappingFragment StoreEntitySet="tbProduct">
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Product_Alias" ColumnName="Product_Alias" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PV" ColumnName="PV" />
+                <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+                <ScalarProperty Name="Product_Tag" ColumnName="Product_Tag" />
+                <ScalarProperty Name="Stocked_Num" ColumnName="Stocked_Num" />
+                <ScalarProperty Name="SalesVolume" ColumnName="SalesVolume" />
+                <ScalarProperty Name="SendedVolume" ColumnName="SendedVolume" />
+                <ScalarProperty Name="Is_Delete" ColumnName="Is_Delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbProvince">
+            <EntityTypeMapping TypeName="dbTiderModel.tbProvince">
+              <MappingFragment StoreEntitySet="tbProvince">
+                <ScalarProperty Name="Province_ID" ColumnName="Province_ID" />
+                <ScalarProperty Name="Province_Name" ColumnName="Province_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbRole">
+            <EntityTypeMapping TypeName="dbTiderModel.tbRole">
+              <MappingFragment StoreEntitySet="tbRole">
+                <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+                <ScalarProperty Name="Is_Delete" ColumnName="Is_Delete" />
+                <ScalarProperty Name="Is_Hide" ColumnName="Is_Hide" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbRoleMenu">
+            <EntityTypeMapping TypeName="dbTiderModel.tbRoleMenu">
+              <MappingFragment StoreEntitySet="tbRoleMenu">
+                <ScalarProperty Name="RoleMenu_ID" ColumnName="RoleMenu_ID" />
+                <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+                <ScalarProperty Name="Menu_Name" ColumnName="Menu_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbSCenterAccount">
+            <EntityTypeMapping TypeName="dbTiderModel.tbSCenterAccount">
+              <MappingFragment StoreEntitySet="tbSCenterAccount">
+                <ScalarProperty Name="SCenter_ID" ColumnName="SCenter_ID" />
+                <ScalarProperty Name="Sum_ECurrency" ColumnName="Sum_ECurrency" />
+                <ScalarProperty Name="Sum_Cash" ColumnName="Sum_Cash" />
+                <ScalarProperty Name="Left_ECurrency" ColumnName="Left_ECurrency" />
+                <ScalarProperty Name="Left_Cash" ColumnName="Left_Cash" />
+                <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbSCenterAccountChangeRecord">
+            <EntityTypeMapping TypeName="dbTiderModel.tbSCenterAccountChangeRecord">
+              <MappingFragment StoreEntitySet="tbSCenterAccountChangeRecord">
+                <ScalarProperty Name="Record_ID" ColumnName="Record_ID" />
+                <ScalarProperty Name="SCenter_ID" ColumnName="SCenter_ID" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="Account_type" ColumnName="Account_type" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Operator_ID" ColumnName="Operator_ID" />
+                <ScalarProperty Name="Operator_Type" ColumnName="Operator_Type" />
+                <ScalarProperty Name="Operator_Time" ColumnName="Operator_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbSCenterInfo">
+            <EntityTypeMapping TypeName="dbTiderModel.tbSCenterInfo">
+              <MappingFragment StoreEntitySet="tbSCenterInfo">
+                <ScalarProperty Name="SCenter_ID" ColumnName="SCenter_ID" />
+                <ScalarProperty Name="SCenter_Name" ColumnName="SCenter_Name" />
+                <ScalarProperty Name="ServinceCenter_RealName" ColumnName="ServinceCenter_RealName" />
+                <ScalarProperty Name="First_Password" ColumnName="First_Password" />
+                <ScalarProperty Name="Second_Password" ColumnName="Second_Password" />
+                <ScalarProperty Name="Scenter_Level" ColumnName="Scenter_Level" />
+                <ScalarProperty Name="Address_ID" ColumnName="Address_ID" />
+                <ScalarProperty Name="DetailAddress" ColumnName="DetailAddress" />
+                <ScalarProperty Name="Is_Delete" ColumnName="Is_Delete" />
+                <ScalarProperty Name="SCenterManager_ID" ColumnName="SCenterManager_ID" />
+                <ScalarProperty Name="SCenterManager_Name" ColumnName="SCenterManager_Name" />
+                <ScalarProperty Name="SCenterManager_Phone" ColumnName="SCenterManager_Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbShoppingRecord">
+            <EntityTypeMapping TypeName="dbTiderModel.tbShoppingRecord">
+              <MappingFragment StoreEntitySet="tbShoppingRecord">
+                <ScalarProperty Name="Record_ID" ColumnName="Record_ID" />
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
+                <ScalarProperty Name="Buy_Time" ColumnName="Buy_Time" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Buy_Count" ColumnName="Buy_Count" />
+                <ScalarProperty Name="Sum_Price" ColumnName="Sum_Price" />
+                <ScalarProperty Name="Sum_PV" ColumnName="Sum_PV" />
+                <ScalarProperty Name="Receiver_Name" ColumnName="Receiver_Name" />
+                <ScalarProperty Name="Receiver_Address" ColumnName="Receiver_Address" />
+                <ScalarProperty Name="Receiver_Phone" ColumnName="Receiver_Phone" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Send_Time" ColumnName="Send_Time" />
+                <ScalarProperty Name="Operator_ID" ColumnName="Operator_ID" />
+                <ScalarProperty Name="Express_Info" ColumnName="Express_Info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbWithdrawRules">
+            <EntityTypeMapping TypeName="dbTiderModel.tbWithdrawRules">
+              <MappingFragment StoreEntitySet="tbWithdrawRules">
+                <ScalarProperty Name="Limit_ID" ColumnName="Limit_ID" />
+                <ScalarProperty Name="lower_Money" ColumnName="lower_Money" />
+                <ScalarProperty Name="uper_Money" ColumnName="uper_Money" />
+                <ScalarProperty Name="HandlingFee" ColumnName="HandlingFee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
