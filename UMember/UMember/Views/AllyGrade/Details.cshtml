@@ -1,0 +1,92 @@
+﻿@model UMember.tbAllyGrade
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbAllyGrade</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AllyGrade_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AllyGrade_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AllyGrade_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AllyGrade_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Money)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Money)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PV)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PV)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gift_Money)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gift_Money)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gift_PV)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gift_PV)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Delete)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Delete)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Hide)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Hide)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaxZhaoSangJiang)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaxZhaoSangJiang)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaxShiCangBuTieFactor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaxShiCangBuTieFactor)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

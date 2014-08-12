@@ -1,0 +1,64 @@
+﻿@model UMember.tbJmail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbJmail</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mail_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mail_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mail_Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mail_Content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Receiver_MailAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Receiver_MailAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Send_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Send_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mail_Type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mail_Type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Failed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Failed)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

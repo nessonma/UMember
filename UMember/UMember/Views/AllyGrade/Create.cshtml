@@ -1,0 +1,115 @@
+﻿@model UMember.tbAllyGrade
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbAllyGrade</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AllyGrade_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AllyGrade_ID)
+            @Html.ValidationMessageFor(model => model.AllyGrade_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AllyGrade_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AllyGrade_Name)
+            @Html.ValidationMessageFor(model => model.AllyGrade_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Money)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Money)
+            @Html.ValidationMessageFor(model => model.Money)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PV)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PV)
+            @Html.ValidationMessageFor(model => model.PV)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Gift_Money)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Gift_Money)
+            @Html.ValidationMessageFor(model => model.Gift_Money)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Gift_PV)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Gift_PV)
+            @Html.ValidationMessageFor(model => model.Gift_PV)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Is_Delete)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Delete)
+            @Html.ValidationMessageFor(model => model.Is_Delete)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Is_Hide)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Hide)
+            @Html.ValidationMessageFor(model => model.Is_Hide)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaxZhaoSangJiang)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MaxZhaoSangJiang)
+            @Html.ValidationMessageFor(model => model.MaxZhaoSangJiang)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaxShiCangBuTieFactor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MaxShiCangBuTieFactor)
+            @Html.ValidationMessageFor(model => model.MaxShiCangBuTieFactor)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

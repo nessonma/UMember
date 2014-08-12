@@ -1,0 +1,99 @@
+﻿@model UMember.tbProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbProduct</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product_Alias)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product_Alias)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PV)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PV)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product_Tag)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product_Tag)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Stocked_Num)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Stocked_Num)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SalesVolume)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SalesVolume)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SendedVolume)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SendedVolume)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Delete)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Delete)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<UMember.tbAllyGrade>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AllyGrade_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AllyGrade_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Money)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gift_Money)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gift_PV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Delete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Hide)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxZhaoSangJiang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxShiCangBuTieFactor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AllyGrade_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AllyGrade_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Money)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gift_Money)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gift_PV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Delete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Hide)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxZhaoSangJiang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxShiCangBuTieFactor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

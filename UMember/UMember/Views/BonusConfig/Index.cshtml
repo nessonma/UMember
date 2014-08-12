@@ -1,0 +1,219 @@
+﻿@model IEnumerable<UMember.tbBonusConfig>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance_Num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JSNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Create_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TuiJian_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CenJiang_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CenJiang_Para2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CenJiang_Para3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JianDian_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JianDian_Para2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZiJianGuanLi_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZiJianGuanLi_Para2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZiJianGuanLi_Para3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZiJianGuanLi_Para4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZiJianGuanLi_Para5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DianBu_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FengHong_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FengHong_Para2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CeJiang_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CeJiang_Para2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FangJiang_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FangJiang_Para2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LYou_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LYou_Para2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuXiao_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuXiao_Para2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuXiao_Para3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuXiao_Para4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.XianDai_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiDai_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SenDai_Para1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tax_Para1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance_Num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JSNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Create_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TuiJian_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CenJiang_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CenJiang_Para2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CenJiang_Para3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JianDian_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JianDian_Para2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZiJianGuanLi_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZiJianGuanLi_Para2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZiJianGuanLi_Para3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZiJianGuanLi_Para4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZiJianGuanLi_Para5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DianBu_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FengHong_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FengHong_Para2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CeJiang_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CeJiang_Para2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FangJiang_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FangJiang_Para2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LYou_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LYou_Para2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuXiao_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuXiao_Para2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuXiao_Para3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuXiao_Para4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.XianDai_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiDai_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SenDai_Para1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tax_Para1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

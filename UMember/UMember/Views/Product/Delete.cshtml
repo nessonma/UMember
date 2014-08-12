@@ -1,0 +1,102 @@
+﻿@model UMember.tbProduct
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbProduct</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product_Alias)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product_Alias)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PV)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PV)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product_Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product_Code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product_Tag)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product_Tag)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Stocked_Num)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Stocked_Num)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SalesVolume)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SalesVolume)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SendedVolume)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SendedVolume)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Delete)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Delete)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

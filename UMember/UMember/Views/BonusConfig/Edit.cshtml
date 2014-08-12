@@ -1,0 +1,283 @@
+﻿@model UMember.tbBonusConfig
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbBonusConfig</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Category_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Category_ID)
+            @Html.ValidationMessageFor(model => model.Category_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Balance_Num)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Balance_Num)
+            @Html.ValidationMessageFor(model => model.Balance_Num)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JSNum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.JSNum)
+            @Html.ValidationMessageFor(model => model.JSNum)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Create_Time)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Create_Time)
+            @Html.ValidationMessageFor(model => model.Create_Time)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TuiJian_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TuiJian_Para1)
+            @Html.ValidationMessageFor(model => model.TuiJian_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CenJiang_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CenJiang_Para1)
+            @Html.ValidationMessageFor(model => model.CenJiang_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CenJiang_Para2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CenJiang_Para2)
+            @Html.ValidationMessageFor(model => model.CenJiang_Para2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CenJiang_Para3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CenJiang_Para3)
+            @Html.ValidationMessageFor(model => model.CenJiang_Para3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JianDian_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.JianDian_Para1)
+            @Html.ValidationMessageFor(model => model.JianDian_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JianDian_Para2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.JianDian_Para2)
+            @Html.ValidationMessageFor(model => model.JianDian_Para2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZiJianGuanLi_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZiJianGuanLi_Para1)
+            @Html.ValidationMessageFor(model => model.ZiJianGuanLi_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZiJianGuanLi_Para2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZiJianGuanLi_Para2)
+            @Html.ValidationMessageFor(model => model.ZiJianGuanLi_Para2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZiJianGuanLi_Para3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZiJianGuanLi_Para3)
+            @Html.ValidationMessageFor(model => model.ZiJianGuanLi_Para3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZiJianGuanLi_Para4)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZiJianGuanLi_Para4)
+            @Html.ValidationMessageFor(model => model.ZiJianGuanLi_Para4)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZiJianGuanLi_Para5)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZiJianGuanLi_Para5)
+            @Html.ValidationMessageFor(model => model.ZiJianGuanLi_Para5)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DianBu_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DianBu_Para1)
+            @Html.ValidationMessageFor(model => model.DianBu_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FengHong_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FengHong_Para1)
+            @Html.ValidationMessageFor(model => model.FengHong_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FengHong_Para2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FengHong_Para2)
+            @Html.ValidationMessageFor(model => model.FengHong_Para2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CeJiang_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CeJiang_Para1)
+            @Html.ValidationMessageFor(model => model.CeJiang_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CeJiang_Para2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CeJiang_Para2)
+            @Html.ValidationMessageFor(model => model.CeJiang_Para2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FangJiang_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FangJiang_Para1)
+            @Html.ValidationMessageFor(model => model.FangJiang_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FangJiang_Para2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FangJiang_Para2)
+            @Html.ValidationMessageFor(model => model.FangJiang_Para2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LYou_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LYou_Para1)
+            @Html.ValidationMessageFor(model => model.LYou_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LYou_Para2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LYou_Para2)
+            @Html.ValidationMessageFor(model => model.LYou_Para2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FuXiao_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FuXiao_Para1)
+            @Html.ValidationMessageFor(model => model.FuXiao_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FuXiao_Para2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FuXiao_Para2)
+            @Html.ValidationMessageFor(model => model.FuXiao_Para2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FuXiao_Para3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FuXiao_Para3)
+            @Html.ValidationMessageFor(model => model.FuXiao_Para3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FuXiao_Para4)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FuXiao_Para4)
+            @Html.ValidationMessageFor(model => model.FuXiao_Para4)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.XianDai_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.XianDai_Para1)
+            @Html.ValidationMessageFor(model => model.XianDai_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SiDai_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SiDai_Para1)
+            @Html.ValidationMessageFor(model => model.SiDai_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SenDai_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SenDai_Para1)
+            @Html.ValidationMessageFor(model => model.SenDai_Para1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tax_Para1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Tax_Para1)
+            @Html.ValidationMessageFor(model => model.Tax_Para1)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

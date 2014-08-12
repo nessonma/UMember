@@ -1,0 +1,99 @@
+﻿@model IEnumerable<UMember.tbProduct>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Alias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Tag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stocked_Num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesVolume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SendedVolume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Delete)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Alias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Tag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stocked_Num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesVolume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SendedVolume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Delete)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

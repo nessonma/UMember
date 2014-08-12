@@ -1,0 +1,75 @@
+﻿@model IEnumerable<UMember.tbMemberAccount>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tbMemberInfo.Member_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sum_Bonus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sum_ECurrency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sum_FuXiao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Left_Bonus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Left_ECurrency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Left_FuXiao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Update_Time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbMemberInfo.Member_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sum_Bonus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sum_ECurrency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sum_FuXiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Left_Bonus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Left_ECurrency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Left_FuXiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Update_Time)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
