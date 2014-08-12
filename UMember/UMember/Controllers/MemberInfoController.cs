@@ -12,7 +12,17 @@ namespace UMember.Controllers
     {
         private dbTiderEntities db = new dbTiderEntities();
 
-        //
+        /// <summary>
+        /// 秒结的算法
+        /// </summary>
+        public void SecondCompute()
+        {
+            
+        }
+
+
+
+        //会员信息表---后台管理员使用
         // GET: /MemberInfo/
 
         public ActionResult Index()
@@ -21,20 +31,9 @@ namespace UMember.Controllers
             return View(tbmemberinfo.ToList());
         }
 
-        //
-        // GET: /MemberInfo/Details/5
+       
 
-        public ActionResult Details(int id = 0)
-        {
-            tbMemberInfo tbmemberinfo = db.tbMemberInfo.Find(id);
-            if (tbmemberinfo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tbmemberinfo);
-        }
-
-        //
+        //注册会员
         // GET: /MemberInfo/Create
 
         public ActionResult Create()
@@ -64,7 +63,7 @@ namespace UMember.Controllers
             return View(tbmemberinfo);
         }
 
-        //
+        //修改会员信息--待用
         // GET: /MemberInfo/Edit/5
 
         public ActionResult Edit(int id = 0)
@@ -98,7 +97,7 @@ namespace UMember.Controllers
             return View(tbmemberinfo);
         }
 
-        //
+        //删除会员---待用
         // GET: /MemberInfo/Delete/5
 
         public ActionResult Delete(int id = 0)
@@ -127,6 +126,33 @@ namespace UMember.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        /// <summary>
+        /// 推荐额度
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult RecommendAmountIndex()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 会员升级
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpGradeIndex()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 会员升级经理
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpMarketingManagerLevelIndex()
+        {
+            return View();
         }
     }
 }
