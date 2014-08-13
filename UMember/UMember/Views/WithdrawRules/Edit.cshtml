@@ -1,0 +1,59 @@
+﻿@model UMember.tbWithdrawRules
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbWithdrawRules</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Limit_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Limit_ID)
+            @Html.ValidationMessageFor(model => model.Limit_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lower_Money)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lower_Money)
+            @Html.ValidationMessageFor(model => model.lower_Money)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.uper_Money)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.uper_Money)
+            @Html.ValidationMessageFor(model => model.uper_Money)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HandlingFee)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HandlingFee)
+            @Html.ValidationMessageFor(model => model.HandlingFee)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

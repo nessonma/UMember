@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<FWMemberAdmin.tbProduct>
+
+@{
+    ViewBag.Title = "新增会员";
+}
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('新增会员')").addClass("active");
+    })
+</script>
+
+<table class="table table-bordered">
+    @{
+        int cols = 4;
+        List<FWMemberAdmin.tbProduct> list = Model.ToList();
+        int count = list.Count;
+        int rows = count / cols;
+        int left = count % cols;
+
+        int k = 0;
+        for (int i = 1; i <= rows; i++)
+        {
+            
+        @Html.Raw("<tr>");
+                         for (int j = 1; j <= cols; j++)
+                         {
+                             var item = list[k];
+        @Html.Raw(" <td><div><img src='/images/" + item.Product_Name + ".jpg'/></div>");
+        @Html.Raw("<div>");
+        @Html.DisplayFor(modelItem => item.Product_Name)@Html.Raw("</div>");
+        @Html.Raw("<div>");@Html.DisplayFor(modelItem => item.Price)  @Html.Raw("</div>");                   
+        @Html.ActionLink("加入购物车", "Create", "MemberAllyGradeProductRecord", new { Product_ID = item.Product_ID, Step = ViewBag.Step }, new { @class = "btn btn-success" })
+        @Html.Raw("</td>");
+
+
+                          k = k + 1;
+                         } 
+        @Html.Raw("</tr> ");
+
+        }
+
+        if (left > 0)
+        {
+             @Html.Raw("<tr>");
+                              for (int j = 1; j <= left; j++)
+                              {
+                                  var item = list[k];
+        @Html.Raw(" <td><div><img src='/images/" + item.Product_Name + ".jpg'/></div>");
+        @Html.Raw("<div>");
+        @Html.DisplayFor(modelItem => item.Product_Name)
+        @Html.Raw("</div>");
+        @Html.Raw("<div>");@Html.DisplayFor(modelItem => item.Price)  
+        @Html.Raw("</div>");                   
+        @Html.ActionLink("加入购物车", "Create", "MemberAllyGradeProductRecord", new { Product_ID = item.Product_ID, Step = ViewBag.Step }, new { @class = "btn btn-success" })
+        @Html.Raw("</td>");
+
+
+                          k = k + 1;
+                              } 
+        @Html.Raw("</tr> ");
+
+        }
+        
+        
+        
+    }
+
+
+
+</table>

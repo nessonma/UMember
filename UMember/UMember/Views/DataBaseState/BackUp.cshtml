@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "数据备份";
+}
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('数据备份')").addClass("active");
+    })
+
+</script>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+   @using (Html.BeginForm("BackUpPost", "DataBaseState")) 
+{   
+       
+      
+        
+    <input type="submit" value="数据备份" class="btn btn-success" />
+  
+}
+        
+    </div><span class="alert alert-success">@ViewBag.Tip</span>
+   
+    
+</body>
+</html>

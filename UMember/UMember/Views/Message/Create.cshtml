@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "会员留言";
+}
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('会员留言')").addClass("active");
+    })
+
+</script>
+@model UMember.Models.MessageView
+
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbRequest</legend>
+
+        
+
+        <div class="editor-label">
+           会员名称
+        </div>
+        <div class="editor-field">    
+                   @Html.EditorFor(model => model.Member_Name)
+            @Html.ValidationMessageFor(model => model.Member_Name)
+        </div>
+        <div class="editor-label">
+            内容
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Message)
+            @Html.ValidationMessageFor(model => model.Message)
+        </div>
+
+       
+
+        <p>
+            @Html.ActionLink("取消", "LeadIndex","Message",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+

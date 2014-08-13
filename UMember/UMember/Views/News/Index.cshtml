@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<FWMemberAdmin.tbNews>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('新闻管理')").addClass("active");
+    })
+
+</script>
+
+@using (Html.BeginForm("Index", "News", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","News",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+            标题
+        </th>
+        <th>
+            类别
+        </th>
+        <th>
+            内容
+        </th>
+        <th>
+            发布者
+        </th>
+        <th>
+            发布时间
+        </th>
+        <th>
+            访问权限
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Editor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edit_Time)
+        </td>
+        @if(item.Property==0)
+        {
+        <td>所有人</td>
+        }        
+        else
+        {
+            <td>会员</td>
+        }
+        
+        <td>
+            @Html.ActionLink("编辑", "Edit", new { id = item.News_ID }, new {@class="btn btn-success" }) 
+            @Html.ActionLink("删除", "Delete", new { id = item.News_ID }, new {@class="btn btn-success" })
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )   

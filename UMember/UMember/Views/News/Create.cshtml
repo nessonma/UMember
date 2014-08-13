@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model FWMemberAdmin.tbNews
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('新闻管理')").addClass("active");
+    })
+    
+</script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbNews</legend>
+
+
+        <div class="editor-label">
+            标题
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            类别
+        </div>
+        <div class="editor-field">  
+        <select  id="Category" name="Category">
+            <option value="公告">公告</option>
+<option value="更新">更新</option>
+<option value="活动">活动</option>
+<option value="其他">其他</option>
+</select>
+        </div>
+
+        <div class="editor-label">
+            内容
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description, new { @style="width:600px;height:300px;"})
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            发布人
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Editor)
+            @Html.ValidationMessageFor(model => model.Editor)
+        </div>
+
+         <div class="editor-label">
+            开放权限
+        </div>
+        <div class="editor-field">  
+        <select  id="Property" name="Property">
+            <option value="0">所有人</option>
+<option value="2">会员</option>
+
+</select>
+        </div>
+
+        <p>
+           @Html.ActionLink("取消", "Index","News",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+

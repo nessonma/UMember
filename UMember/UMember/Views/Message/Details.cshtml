@@ -1,0 +1,85 @@
+﻿@model UMember.tbMessage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbMessage</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sender_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sender_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sender_Type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sender_Type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Send_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Send_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Receiver_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Receiver_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Receiver_Type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Receiver_Type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message_Send)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message_Send)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message_Reply)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message_Reply)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Reply_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Reply_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.State)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.State)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

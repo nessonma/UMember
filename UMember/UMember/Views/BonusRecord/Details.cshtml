@@ -1,0 +1,64 @@
+﻿@model UMember.tbBonusRecord
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbBonusRecord</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Record_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Record_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbMemberInfo.Member_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbMemberInfo.Member_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Current_Bonus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Current_Bonus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bonus_Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bonus_Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bonus_Producer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bonus_Producer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Balance_Num)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Balance_Num)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Operator_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Operator_Time)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

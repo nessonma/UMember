@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model UMember.tbAdmin
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('管理员管理')").addClass("active");
+    })
+
+</script>
+
+<h3>确定删除该管理员吗？</h3>
+@using (Html.BeginForm()) {
+<fieldset>
+    <legend>tbAdmin</legend>
+
+    
+
+    <div class="display-label">
+        管理员
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Admin_Name)
+    </div>
+
+    
+</fieldset>
+
+        <p>
+            @Html.ActionLink("取消", "Index","Admin",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

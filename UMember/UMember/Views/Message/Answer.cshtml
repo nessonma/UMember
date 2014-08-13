@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model FWMemberAdmin.tbMessage
+
+@{
+    ViewBag.Title = "Index";
+}
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('会员留言')").addClass("active");
+    })
+
+</script>
+
+<h2>留言回复</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbRequest</legend>
+        <div class="editor-label">
+           回复内容
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Reply)
+            @Html.ValidationMessageFor(model => model.Reply)
+        </div>
+
+       
+        @Html.HiddenFor(model => model.Message_ID)
+        <p>
+            @Html.ActionLink("取消", "Index","Message",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}

@@ -1,0 +1,43 @@
+﻿@model UMember.tbAdmin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbAdmin</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Admin_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Admin_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbRole.Role_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbRole.Role_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Admin_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Admin_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Admin_Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Admin_Password)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

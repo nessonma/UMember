@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model UMember.tbDataBaseState
+@{
+    ViewBag.Title = "系统关闭";
+}
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('系统关闭')").addClass("active");
+    })
+
+</script>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+   @using (Html.BeginForm("Close", "DataBaseState")) 
+{   
+       
+       
+       if(ViewBag.State==0)
+{
+    <div>关闭原因
+           <textarea id="Reason" name="Reason" >@ViewBag.Reason</textarea>
+       </div>
+    <input type="submit" value="系统关闭" class="btn btn-success" />
+   }
+   else
+       {
+           <div>开启原因
+           <textarea id="Reason" name="Reason">@ViewBag.Reason</textarea>
+       </div>
+     <input type="submit" value="系统开启" class="btn btn-success" />
+       }
+}
+        
+    </div>
+   
+    
+</body>
+</html>

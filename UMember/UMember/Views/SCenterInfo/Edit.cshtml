@@ -1,0 +1,123 @@
+﻿@model UMember.tbSCenterInfo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbSCenterInfo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SCenter_ID, "tbSCenterAccount")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SCenter_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.SCenter_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SCenter_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SCenter_Name)
+            @Html.ValidationMessageFor(model => model.SCenter_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServinceCenter_RealName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServinceCenter_RealName)
+            @Html.ValidationMessageFor(model => model.ServinceCenter_RealName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.First_Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.First_Password)
+            @Html.ValidationMessageFor(model => model.First_Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Second_Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Second_Password)
+            @Html.ValidationMessageFor(model => model.Second_Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Scenter_Level)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Scenter_Level)
+            @Html.ValidationMessageFor(model => model.Scenter_Level)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address_ID)
+            @Html.ValidationMessageFor(model => model.Address_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DetailAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DetailAddress)
+            @Html.ValidationMessageFor(model => model.DetailAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Is_Delete)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Delete)
+            @Html.ValidationMessageFor(model => model.Is_Delete)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SCenterManager_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SCenterManager_ID)
+            @Html.ValidationMessageFor(model => model.SCenterManager_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SCenterManager_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SCenterManager_Name)
+            @Html.ValidationMessageFor(model => model.SCenterManager_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SCenterManager_Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SCenterManager_Phone)
+            @Html.ValidationMessageFor(model => model.SCenterManager_Phone)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

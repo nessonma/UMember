@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model UMember.Models.AdminView
+
+
+@{
+    ViewBag.Title = "编辑管理员";
+}
+
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('管理员管理')").addClass("active");
+    })
+    
+</script>
+
+
+
+<h2>编辑管理员</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>编辑管理员</legend>
+
+        
+
+        <div class="editor-label">
+            管理员
+        </div>
+        <div class="editor-field">
+            <input name="Admin_Name" id="Admin_Name" readonly="readonly" value="@Model.Admin_Name"/>
+            @Html.ValidationMessageFor(model => model.Admin_Name)
+        </div>
+        <div class="editor-label">
+            选择角色
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Role_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Role_ID)
+        </div>
+        <div class="editor-label">
+            密码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Admin_Password,"")
+            @Html.ValidationMessageFor(model => model.Admin_Password)
+        </div>
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Confirm_Admin_Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Confirm_Admin_Password)
+            @Html.ValidationMessageFor(model => model.Confirm_Admin_Password)
+        </div>
+
+         @Html.HiddenFor(model => model.Admin_ID)
+        <p>
+            @Html.ActionLink("取消", "Index","Admin",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+

@@ -1,0 +1,103 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<UMember.Models.MessageView>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('会员留言')").addClass("active");
+    })
+
+</script>
+
+@using (Html.BeginForm("Index", "Message", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+       
+        <th>
+            会员名
+        </th>
+       
+        <th>
+           部门
+        </th>
+        <th>
+           留言
+        </th>
+        <th>
+           留言时间
+        </th>
+        <th>
+            回复内容
+        </th>
+        <th>
+            回复人
+        </th>
+        <th>
+            回复时间
+        </th>
+        <th>
+            状态
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Member_Name)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message_Time)
+        </td> 
+        <td>
+            @Html.DisplayFor(modelItem => item.Reply)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Admin_Name)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Reply_Time)
+        </td>
+        @if(item.State==true)
+        {
+        <td>
+            已回复
+        </td>
+        <td>             
+        </td>
+        }
+        else
+        {
+            <td>
+            未回复
+        </td>
+        <td>
+            @Html.ActionLink("回复", "Answer", new { id=item.Message_ID},new {@class="btn btn-success"})        
+        </td>
+        }
+        
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )   

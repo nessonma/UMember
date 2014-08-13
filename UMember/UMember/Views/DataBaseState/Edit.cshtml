@@ -1,0 +1,61 @@
+﻿@model UMember.tbDataBaseState
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbDataBaseState</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Is_Closed)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Closed)
+            @Html.ValidationMessageFor(model => model.Is_Closed)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Reason)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Reason)
+            @Html.ValidationMessageFor(model => model.Reason)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Operator_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Operator_ID)
+            @Html.ValidationMessageFor(model => model.Operator_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Operator_Time)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Operator_Time)
+            @Html.ValidationMessageFor(model => model.Operator_Time)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

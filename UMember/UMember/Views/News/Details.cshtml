@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model FWMemberAdmin.tbNews
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('新闻管理')").addClass("active");
+    })
+    
+</script>
+@model FWMemberAdmin.tbNews
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbNews</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.News_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.News_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Category)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Editor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Editor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Edit_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Edit_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Property)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Property)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

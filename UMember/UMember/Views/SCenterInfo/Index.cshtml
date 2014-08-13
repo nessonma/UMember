@@ -1,0 +1,99 @@
+﻿@model IEnumerable<UMember.tbSCenterInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tbSCenterAccount.SCenter_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SCenter_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServinceCenter_RealName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Second_Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Scenter_Level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DetailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Delete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SCenterManager_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SCenterManager_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SCenterManager_Phone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbSCenterAccount.SCenter_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SCenter_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServinceCenter_RealName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Second_Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Scenter_Level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DetailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Delete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SCenterManager_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SCenterManager_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SCenterManager_Phone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

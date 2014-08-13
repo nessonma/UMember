@@ -1,0 +1,91 @@
+﻿@model UMember.tbMemberAccountChangeRecord
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbMemberAccountChangeRecord</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Record_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Record_ID)
+            @Html.ValidationMessageFor(model => model.Record_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Member_ID, "tbMemberInfo")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Member_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Member_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Money)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Money)
+            @Html.ValidationMessageFor(model => model.Money)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Account_type)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Account_type)
+            @Html.ValidationMessageFor(model => model.Account_type)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Operator_ID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Operator_ID)
+            @Html.ValidationMessageFor(model => model.Operator_ID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Operator_Type)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Operator_Type)
+            @Html.ValidationMessageFor(model => model.Operator_Type)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Operator_Time)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Operator_Time)
+            @Html.ValidationMessageFor(model => model.Operator_Time)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

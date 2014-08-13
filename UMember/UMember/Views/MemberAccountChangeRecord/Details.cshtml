@@ -1,0 +1,71 @@
+﻿@model UMember.tbMemberAccountChangeRecord
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbMemberAccountChangeRecord</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Record_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Record_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbMemberInfo.Member_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbMemberInfo.Member_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Money)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Money)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Account_type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Account_type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Operator_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Operator_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Operator_Type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Operator_Type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Operator_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Operator_Time)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

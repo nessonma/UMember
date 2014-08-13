@@ -1,0 +1,57 @@
+﻿@model UMember.tbSCenterAccount
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbSCenterAccount</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbSCenterInfo.SCenter_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbSCenterInfo.SCenter_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sum_ECurrency)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sum_ECurrency)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sum_Cash)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sum_Cash)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Left_ECurrency)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Left_ECurrency)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Left_Cash)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Left_Cash)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Update_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Update_Time)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

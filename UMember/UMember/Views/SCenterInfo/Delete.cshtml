@@ -1,0 +1,102 @@
+﻿@model UMember.tbSCenterInfo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbSCenterInfo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbSCenterAccount.SCenter_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbSCenterAccount.SCenter_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SCenter_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SCenter_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServinceCenter_RealName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServinceCenter_RealName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.First_Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.First_Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Second_Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Second_Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Scenter_Level)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Scenter_Level)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DetailAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DetailAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Delete)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Delete)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SCenterManager_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SCenterManager_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SCenterManager_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SCenterManager_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SCenterManager_Phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SCenterManager_Phone)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

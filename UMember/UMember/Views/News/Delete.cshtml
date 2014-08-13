@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model FWMemberAdmin.tbNews
+@{
+    ViewBag.Title = "删除新闻";
+}
+
+
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('新闻管理')").addClass("active");
+    })
+    
+</script>
+
+
+<h2>删除新闻</h2>
+
+<h3>确定删除该新闻？</h3>
+<fieldset>
+    <legend>tbNews</legend>
+
+   
+    <div class="display-label">
+         标题
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+
+</fieldset>
+@using (Html.BeginForm()) {
+    
+        @Html.HiddenFor(model => model.News_ID)
+        <p>
+           @Html.ActionLink("取消", "Index","News",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+   
+}

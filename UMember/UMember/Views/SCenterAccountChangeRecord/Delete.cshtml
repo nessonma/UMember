@@ -1,0 +1,74 @@
+﻿@model UMember.tbSCenterAccountChangeRecord
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbSCenterAccountChangeRecord</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Record_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Record_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbSCenterInfo.SCenter_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbSCenterInfo.SCenter_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Money)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Money)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Account_type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Account_type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Operator_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Operator_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Operator_Type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Operator_Type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Operator_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Operator_Time)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
