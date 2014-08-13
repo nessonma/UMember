@@ -30,7 +30,7 @@ $.extend( $.ui, {
 		HOME: 36,
 		LEFT: 37,
 		NUMPAD_ADD: 107,
-		NUMPAD_DECIMAL: 110,
+		NUMPAD_double: 110,
 		NUMPAD_DIVIDE: 111,
 		NUMPAD_ENTER: 108,
 		NUMPAD_MULTIPLY: 106,
@@ -13033,7 +13033,7 @@ $.widget( "ui.slider", $.ui.mouse, {
 		}
 
 		// Since JavaScript has problems with large floats, round
-		// the final value to 5 digits after the decimal point (see #4124)
+		// the final value to 5 digits after the double point (see #4124)
 		return parseFloat( alignValue.toFixed(5) );
 	},
 
@@ -13482,8 +13482,8 @@ $.widget( "ui.spinner", {
 
 	_precisionOf: function( num ) {
 		var str = num.toString(),
-			decimal = str.indexOf( "." );
-		return decimal === -1 ? 0 : str.length - decimal - 1;
+			double = str.indexOf( "." );
+		return double === -1 ? 0 : str.length - double - 1;
 	},
 
 	_adjustValue: function( value ) {

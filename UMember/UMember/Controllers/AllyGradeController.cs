@@ -5,21 +5,45 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using UMember.Models;
 
 namespace UMember.Controllers
 {
     public class AllyGradeController : Controller
     {
         private dbTiderEntities db = new dbTiderEntities();
-
         //
         // GET: /AllyGrade/
 
-        public ActionResult Index()
+        public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.tbAllyGrade.ToList());
-        }
+            ViewBag.CurrentSort = sortOrder;
+            
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
 
+            ViewBag.CurrentFilter = searchString;
+
+            var allyGrades = from s in db.tbAllyGrade
+                             where (s.Is_Delete == false || s.Is_Delete == null)
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                allyGrades = allyGrades.Where(s => s.AllyGrade_Name.ToUpper()==searchString.ToUpper()); 
+            }
+            allyGrades = allyGrades.OrderBy(s => s.AllyGrade_ID);
+            int pageSize = 20;
+            int pageNumber = (page ?? 1);
+            return View(allyGrades.ToPagedList(pageNumber, pageSize));
+        }
+        
         //
         // GET: /AllyGrade/Details/5
 
@@ -45,16 +69,19 @@ namespace UMember.Controllers
         // POST: /AllyGrade/Create
 
         [HttpPost]
-        public ActionResult Create(tbAllyGrade tballygrade)
+        public ActionResult Create(AllyGradeView view )
         {
             if (ModelState.IsValid)
             {
+                tbAllyGrade tballygrade = new tbAllyGrade();// ViewModelConvert.ConvertViewToModel(view);
+                tballygrade.Is_Delete = false;
+                tballygrade.Is_Hide = false;
                 db.tbAllyGrade.Add(tballygrade);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(tballygrade);
+            return View();
         }
 
         //
@@ -67,22 +94,24 @@ namespace UMember.Controllers
             {
                 return HttpNotFound();
             }
-            return View(tballygrade);
+            AllyGradeView model = new AllyGradeView();// ViewModelConvert.ConvertViewToModel(tballygrade);
+            return View(model);
         }
 
         //
         // POST: /AllyGrade/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(tbAllyGrade tballygrade)
+        public ActionResult Edit(AllyGradeView view)
         {
             if (ModelState.IsValid)
             {
+                tbAllyGrade tballygrade = new tbAllyGrade();// ViewModelConvert.ConvertViewToModel(view);
                 db.Entry(tballygrade).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(tballygrade);
+            return View(view);
         }
 
         //
@@ -105,7 +134,8 @@ namespace UMember.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             tbAllyGrade tballygrade = db.tbAllyGrade.Find(id);
-            db.tbAllyGrade.Remove(tballygrade);
+            tballygrade.Is_Delete = true;
+            db.Entry(tballygrade).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

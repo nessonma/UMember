@@ -1,95 +1,39 @@
-﻿@model UMember.tbAllyGrade
-
-@{
-    ViewBag.Title = "Delete";
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model UMember.tbAllyGrade
+@{
+    ViewBag.Title = "删除加盟等级";
+}
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('加盟等级管理')").addClass("active");
+    })
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+</script>
+<h3>确定要删除该加盟等级？</h3>
 <fieldset>
-    <legend>tbAllyGrade</legend>
+    <legend>tbProduct</legend>
 
+    
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.AllyGrade_ID)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.AllyGrade_ID)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.AllyGrade_Name)
+         加盟等级名称
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.AllyGrade_Name)
     </div>
-
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Money)
+         权重
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Money)
+        @Html.DisplayFor(model => model.Weight)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PV)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PV)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Description)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Gift_Money)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Gift_Money)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Gift_PV)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Gift_PV)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Is_Delete)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Is_Delete)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Is_Hide)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Is_Hide)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.MaxZhaoSangJiang)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.MaxZhaoSangJiang)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.MaxShiCangBuTieFactor)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.MaxShiCangBuTieFactor)
-    </div>
+    
+    
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("取消", "Index","AllyGrade",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
     </p>
 }

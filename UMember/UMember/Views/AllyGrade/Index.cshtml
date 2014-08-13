@@ -1,93 +1,103 @@
-﻿@model IEnumerable<UMember.tbAllyGrade>
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<UMember.tbAllyGrade>
+@using PagedList.Mvc; 
 
 @{
     ViewBag.Title = "Index";
 }
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('加盟等级管理')").addClass("active");
+    })
+    
+</script>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+@using (Html.BeginForm("Index", "AllyGrade", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","AllyGrade",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
     <tr>
+        
         <th>
-            @Html.DisplayNameFor(model => model.AllyGrade_ID)
+            名称
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AllyGrade_Name)
+            加盟金额
+        </th>
+
+        <th>
+           折算PV
+        </th>
+         <th>
+           权重
+        </th>
+         <th>
+           最高招商奖励
+        </th>
+         <th>
+           最高市场补贴系数
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Money)
+            备注
         </th>
+       
         <th>
-            @Html.DisplayNameFor(model => model.PV)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Gift_Money)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Gift_PV)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Is_Delete)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Is_Hide)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaxZhaoSangJiang)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaxShiCangBuTieFactor)
+            是否隐藏
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AllyGrade_ID)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.AllyGrade_Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Money)
+            @Html.DisplayFor(modelItem => item.AllyGrade_Money)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PV)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.Weight)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gift_Money)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gift_PV)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Is_Delete)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Is_Hide)
-        </td>
-        <td>
+         <td>
             @Html.DisplayFor(modelItem => item.MaxZhaoSangJiang)
         </td>
-        <td>
+         <td>
             @Html.DisplayFor(modelItem => item.MaxShiCangBuTieFactor)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+       
+            
+        
+            @if(item.Is_Hide==true)
+            {
+                  <td>是</td>             
+            }
+        else
+        {
+                <td>否</td> 
+            }
+        
+        <td>
+            @Html.ActionLink("编辑", "Edit", new {  id=item.AllyGrade_ID  },new {@class= "btn"})        
+            @Html.ActionLink("删除", "Delete", new {  id=item.AllyGrade_ID  },new {@class= "btn"})      
         </td>
     </tr>
 }
 
 </table>
+
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )   
+
+   

@@ -887,7 +887,7 @@ _html2canvas.Util.Font = (function () {
 
   Generate.ListRoman = function(number) {
     var romanArray = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"],
-    decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
+    double = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
     roman = "",
     v,
     len = romanArray.length;
@@ -897,8 +897,8 @@ _html2canvas.Util.Font = (function () {
     }
 
     for (v=0; v < len; v+=1) {
-      while (number >= decimal[v]) {
-        number -= decimal[v];
+      while (number >= double[v]) {
+        number -= double[v];
         roman += romanArray[v];
       }
     }
@@ -1277,10 +1277,10 @@ _html2canvas.Parse = function (images, options) {
   function listItemText(element, type) {
     var currentIndex = elementIndex(element), text;
     switch(type){
-      case "decimal":
+      case "double":
         text = currentIndex;
         break;
-      case "decimal-leading-zero":
+      case "double-leading-zero":
         text = (currentIndex.toString().length === 1) ? currentIndex = "0" + currentIndex.toString() : currentIndex.toString();
         break;
       case "upper-roman":
@@ -1307,7 +1307,7 @@ _html2canvas.Parse = function (images, options) {
     type = getCSS(element, "listStyleType"),
     listBounds;
 
-    if (/^(decimal|decimal-leading-zero|upper-alpha|upper-latin|upper-roman|lower-alpha|lower-greek|lower-latin|lower-roman)$/i.test(type)) {
+    if (/^(double|double-leading-zero|upper-alpha|upper-latin|upper-roman|lower-alpha|lower-greek|lower-latin|lower-roman)$/i.test(type)) {
       text = listItemText(element, type);
       listBounds = listPosition(element, text);
       setTextVariables(ctx, element, "none", getCSS(element, "color"));

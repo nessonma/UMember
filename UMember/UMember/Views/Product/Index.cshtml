@@ -1,68 +1,74 @@
-﻿@model IEnumerable<UMember.tbProduct>
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<UMember.tbProduct>
+@using PagedList.Mvc; 
+
 
 @{
     ViewBag.Title = "Index";
+    
 }
 
-<h2>Index</h2>
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('产品管理')").addClass("active");
+    })
+    
+</script>
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","Product",null,new {@class= "btn"})
+    </p>
+}
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+
+<table class="table table-bordered">
     <tr>
+        
         <th>
-            @Html.DisplayNameFor(model => model.Product_ID)
+            品名
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Product_Name)
+            编码
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Product_Alias)
+            规格
+        </th>        
+        <th>
+            价格
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+           折算PV值
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+           可激活
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PV)
+           可兑换
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Product_Code)
+           是否隐藏
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Product_Tag)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Stocked_Num)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SalesVolume)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SendedVolume)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Is_Delete)
+            备注
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Product_ID)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.Product_Name)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Product_Alias)
+       <td>
+            @Html.DisplayFor(modelItem => item.Product_Code)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.spec)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Price)
@@ -70,30 +76,39 @@
         <td>
             @Html.DisplayFor(modelItem => item.PV)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Product_Code)
+         @if (item.Is_Active == true)
+            {
+                  <td>是</td>             
+            }
+        else
+        {
+                <td>否</td> 
+            }
+         @if (item.Is_Exchange == true)
+            {
+                  <td>是</td>             
+            }
+        else
+        {
+                <td>否</td> 
+            }
+         @if (item.Is_Hide == true)
+            {
+                  <td>是</td>             
+            }
+        else
+        {
+                <td>否</td> 
+            }
+         <td>
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Product_Tag)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Stocked_Num)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SalesVolume)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SendedVolume)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Is_Delete)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("编辑", "Edit", new {  id=item.Product_ID  },new {@class= "btn"}) 
+            @Html.ActionLink("删除", "Delete", new {  id=item.Product_ID  },new {@class= "btn"}) 
         </td>
     </tr>
 }
 
 </table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )   

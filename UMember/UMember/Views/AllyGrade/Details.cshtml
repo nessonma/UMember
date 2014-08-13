@@ -1,13 +1,15 @@
-﻿@model UMember.tbAllyGrade
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model UMember.tbAllyGrade
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
 <fieldset>
-    <legend>tbAllyGrade</legend>
+    <legend>级别详情</legend>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.AllyGrade_ID)
@@ -24,10 +26,10 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Money)
+         @Html.DisplayNameFor(model => model.AllyGrade_Money)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Money)
+        @Html.DisplayFor(model => model.AllyGrade_Money)
     </div>
 
     <div class="display-label">
@@ -45,45 +47,17 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Gift_Money)
+         @Html.DisplayNameFor(model => model.IsDelete)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Gift_Money)
+        @Html.DisplayFor(model => model.IsDelete)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Gift_PV)
+         @Html.DisplayNameFor(model => model.IsHide)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Gift_PV)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Is_Delete)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Is_Delete)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Is_Hide)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Is_Hide)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.MaxZhaoSangJiang)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.MaxZhaoSangJiang)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.MaxShiCangBuTieFactor)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.MaxShiCangBuTieFactor)
+        @Html.DisplayFor(model => model.IsHide)
     </div>
 </fieldset>
 <p>

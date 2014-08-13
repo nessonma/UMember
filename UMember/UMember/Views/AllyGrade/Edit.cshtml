@@ -1,27 +1,28 @@
-﻿@model UMember.tbAllyGrade
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model UMember.Models.AllyGradeView
 
 @{
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('加盟等级管理')").addClass("active");
+    })
+    
+</script>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>tbAllyGrade</legend>
+        <legend>编辑加盟级别</legend>
 
+       
         <div class="editor-label">
-            @Html.LabelFor(model => model.AllyGrade_ID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.AllyGrade_ID)
-            @Html.ValidationMessageFor(model => model.AllyGrade_ID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.AllyGrade_Name)
+           名称
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.AllyGrade_Name)
@@ -29,63 +30,30 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Money)
+            加盟金额
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Money)
-            @Html.ValidationMessageFor(model => model.Money)
+            @Html.EditorFor(model => model.AllyGrade_Money)
+            @Html.ValidationMessageFor(model => model.AllyGrade_Money)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.PV)
+           折算PV值
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.PV)
             @Html.ValidationMessageFor(model => model.PV)
         </div>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
+            权重
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description)
+            @Html.EditorFor(model => model.Weight)
+            @Html.ValidationMessageFor(model => model.Weight)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Gift_Money)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Gift_Money)
-            @Html.ValidationMessageFor(model => model.Gift_Money)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Gift_PV)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Gift_PV)
-            @Html.ValidationMessageFor(model => model.Gift_PV)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Is_Delete)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Is_Delete)
-            @Html.ValidationMessageFor(model => model.Is_Delete)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Is_Hide)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Is_Hide)
-            @Html.ValidationMessageFor(model => model.Is_Hide)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.MaxZhaoSangJiang)
+            最大招商奖励
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.MaxZhaoSangJiang)
@@ -93,23 +61,37 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.MaxShiCangBuTieFactor)
+            最高市场补贴系数
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.MaxShiCangBuTieFactor)
             @Html.ValidationMessageFor(model => model.MaxShiCangBuTieFactor)
         </div>
 
+
+
+        <div class="editor-label">
+            备注
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        
+
+        <div class="editor-label">
+           是否隐藏
+        </div>
+        <div class="editor-field">
+           @Html.RadioButtonFor(model => model.Is_Hide, "false") 否
+            @Html.RadioButtonFor(model => model.Is_Hide, "true") 是
+        </div>
+         @Html.HiddenFor(model => model.AllyGrade_ID)
         <p>
-            <input type="submit" value="Save" />
+          @Html.ActionLink("取消", "Index","AllyGrade",null,new {@class= "btn"})  <input type="submit" value="提交" class="btn btn-success" />
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

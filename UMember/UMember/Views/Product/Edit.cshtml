@@ -1,51 +1,57 @@
-﻿@model UMember.tbProduct
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model UMember.tbProduct
 
 @{
     ViewBag.Title = "Edit";
 }
+<script>
+    jQuery().ready(function ($) {
+        $(".nav li:contains('产品管理')").addClass("active");
+    })
 
-<h2>Edit</h2>
+</script>
+<h2>编辑产品</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>tbProduct</legend>
+        <legend>编辑产品</legend>
+
+
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Product_ID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Product_ID)
-            @Html.ValidationMessageFor(model => model.Product_ID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Product_Name)
+            <span class="input_required">*</span>名称
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Product_Name)
             @Html.ValidationMessageFor(model => model.Product_Name)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Product_Alias)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Product_Alias)
-            @Html.ValidationMessageFor(model => model.Product_Alias)
-        </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
+            <span class="input_required">*</span>编码
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description)
+            @Html.EditorFor(model => model.Product_Code)
+            @Html.ValidationMessageFor(model => model.Product_Code)
         </div>
 
+
         <div class="editor-label">
-            @Html.LabelFor(model => model.Price)
+            <span class="input_required">*</span>规格
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.spec)
+            @Html.ValidationMessageFor(model => model.spec)
+        </div>
+
+
+        <div class="editor-label">
+            <span class="input_required">*</span>价格
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Price)
@@ -53,71 +59,48 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.PV)
+            <span class="input_required">*</span>折算PV值
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.PV)
             @Html.ValidationMessageFor(model => model.PV)
         </div>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.Product_Code)
+            可激活
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Product_Code)
-            @Html.ValidationMessageFor(model => model.Product_Code)
+            @Html.RadioButtonFor(model => model.Is_Active, "true", new { Checked = "checked" }) 是
+    @Html.RadioButtonFor(model => model.Is_Active, "false") 否
         </div>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.Product_Tag)
+            可兑换
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Product_Tag)
-            @Html.ValidationMessageFor(model => model.Product_Tag)
+            @Html.RadioButtonFor(model => model.Is_Exchange, "true", new { Checked = "checked" }) 是
+    @Html.RadioButtonFor(model => model.Is_Exchange, "false") 否
         </div>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.Stocked_Num)
+            是否隐藏
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Stocked_Num)
-            @Html.ValidationMessageFor(model => model.Stocked_Num)
+            @Html.RadioButtonFor(model => model.Is_Hide, "true") 是
+    @Html.RadioButtonFor(model => model.Is_Hide, "false") 否
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.SalesVolume)
+            描述
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.SalesVolume)
-            @Html.ValidationMessageFor(model => model.SalesVolume)
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SendedVolume)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SendedVolume)
-            @Html.ValidationMessageFor(model => model.SendedVolume)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Is_Delete)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Is_Delete)
-            @Html.ValidationMessageFor(model => model.Is_Delete)
-        </div>
-
+        @Html.HiddenFor(model => model.Product_ID)
         <p>
-            <input type="submit" value="Save" />
+            @Html.ActionLink("取消", "Index", "Product", null, new { @class = "btn" })
+            <input type="submit" value="提交" class="btn btn-success" />
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
